@@ -89,6 +89,8 @@ public class login extends javax.swing.JFrame {
         label3.setText("E-mail");
         panel2.add(label3);
         label3.setBounds(180, 190, 70, 25);
+
+        jTextField1.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
         panel2.add(jTextField1);
         jTextField1.setBounds(180, 230, 488, 45);
 
