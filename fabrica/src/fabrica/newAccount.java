@@ -50,6 +50,11 @@ public class newAccount extends javax.swing.JFrame {
 
         jTextField2.setForeground(new java.awt.Color(14, 14, 14));
         jTextField2.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(140, 140, 140), 1, true));
+        jTextField2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTextField2ActionPerformed(evt);
+            }
+        });
         jPanel2.add(jTextField2);
         jTextField2.setBounds(80, 190, 350, 25);
 
@@ -140,6 +145,10 @@ public class newAccount extends javax.swing.JFrame {
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jButton2ActionPerformed
+
+    private void jTextField2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField2ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTextField2ActionPerformed
 
     /**
      * @param args the command line arguments
