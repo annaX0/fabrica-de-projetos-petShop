@@ -21,8 +21,8 @@ public class login extends javax.swing.JFrame {
     
     private Boolean Logar(String usuario, String senha){
         
-        String senhaBanco = "123";
-        String usuarioBanco = "teste";
+        String senhaBanco = "123"; //fazer um comando sql para receber a senha e usuario do banco para substituir aqui
+        String usuarioBanco = "teste"; // checar se o usuario existe claro antes de trazer os dados
         
         if(usuario.equals(usuarioBanco) && senha.equals(senhaBanco)){
             return true;
@@ -199,7 +199,7 @@ public class login extends javax.swing.JFrame {
         if(!user.equals("") && !senha.equals("")){ //Checa se os campos foram preenchidos
             Boolean logado = Logar(user, senha);
             
-            if(logado){ 
+            if(logado){ //se o login for sucesso
                 agendamento agendament = new agendamento();
                 agendament.setVisible(true);
                 dispose();

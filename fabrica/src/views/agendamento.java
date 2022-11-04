@@ -4,6 +4,8 @@
  */
 package views;
 
+import java.awt.Color;
+
 /**
  *
  * @author annas
@@ -32,16 +34,17 @@ public class agendamento extends javax.swing.JFrame {
         btn_agendamento = new javax.swing.JButton();
         jPanel2 = new javax.swing.JPanel();
         jLabel2 = new javax.swing.JLabel();
-        jComboBox1 = new javax.swing.JComboBox<>();
-        jTextField1 = new javax.swing.JTextField();
-        jButton3 = new javax.swing.JButton();
+        cmb_servico = new javax.swing.JComboBox<>();
+        txt_telefone = new javax.swing.JTextField();
+        btn_agendar = new javax.swing.JButton();
         jLabel7 = new javax.swing.JLabel();
-        jTextField2 = new javax.swing.JTextField();
-        jTextField3 = new javax.swing.JTextField();
-        jTextField4 = new javax.swing.JTextField();
-        jLabel3 = new javax.swing.JLabel();
+        txt_dia = new javax.swing.JTextField();
+        txt_animal = new javax.swing.JTextField();
+        txt_nome = new javax.swing.JTextField();
+        lbl_aviso = new javax.swing.JLabel();
         jLabel8 = new javax.swing.JLabel();
         jLabel9 = new javax.swing.JLabel();
+        jLabel4 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setMinimumSize(new java.awt.Dimension(767, 540));
@@ -100,40 +103,44 @@ public class agendamento extends javax.swing.JFrame {
         jPanel2.add(jLabel2);
         jLabel2.setBounds(90, 330, 61, 20);
 
-        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Gato", "Cachorro" }));
-        jComboBox1.setFocusable(false);
-        jComboBox1.setLightWeightPopupEnabled(false);
-        jComboBox1.setRequestFocusEnabled(false);
-        jComboBox1.setVerifyInputWhenFocusTarget(false);
-        jPanel2.add(jComboBox1);
-        jComboBox1.setBounds(90, 70, 380, 30);
-        jPanel2.add(jTextField1);
-        jTextField1.setBounds(90, 350, 380, 30);
+        cmb_servico.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Gato", "Cachorro" }));
+        cmb_servico.setFocusable(false);
+        cmb_servico.setLightWeightPopupEnabled(false);
+        cmb_servico.setRequestFocusEnabled(false);
+        cmb_servico.setVerifyInputWhenFocusTarget(false);
+        jPanel2.add(cmb_servico);
+        cmb_servico.setBounds(90, 70, 380, 30);
+        jPanel2.add(txt_telefone);
+        txt_telefone.setBounds(90, 350, 380, 30);
 
-        jButton3.setBackground(new java.awt.Color(240, 140, 23));
-        jButton3.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        jButton3.setForeground(new java.awt.Color(255, 255, 255));
-        jButton3.setText("Agendar");
-        jPanel2.add(jButton3);
-        jButton3.setBounds(190, 420, 150, 40);
+        btn_agendar.setBackground(new java.awt.Color(240, 140, 23));
+        btn_agendar.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        btn_agendar.setForeground(new java.awt.Color(255, 255, 255));
+        btn_agendar.setText("Agendar");
+        btn_agendar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_agendarActionPerformed(evt);
+            }
+        });
+        jPanel2.add(btn_agendar);
+        btn_agendar.setBounds(190, 420, 150, 40);
 
         jLabel7.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         jLabel7.setForeground(new java.awt.Color(255, 255, 255));
         jLabel7.setText("Serviço");
         jPanel2.add(jLabel7);
         jLabel7.setBounds(90, 50, 61, 20);
-        jPanel2.add(jTextField2);
-        jTextField2.setBounds(90, 140, 380, 30);
-        jPanel2.add(jTextField3);
-        jTextField3.setBounds(90, 210, 380, 30);
-        jPanel2.add(jTextField4);
-        jTextField4.setBounds(90, 280, 380, 30);
+        jPanel2.add(txt_dia);
+        txt_dia.setBounds(90, 140, 380, 30);
+        jPanel2.add(txt_animal);
+        txt_animal.setBounds(90, 210, 380, 30);
+        jPanel2.add(txt_nome);
+        txt_nome.setBounds(90, 280, 380, 30);
 
-        jLabel3.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        jLabel3.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel3.setText("Dia");
-        jPanel2.add(jLabel3);
-        jLabel3.setBounds(90, 120, 61, 20);
+        lbl_aviso.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        lbl_aviso.setForeground(new java.awt.Color(255, 255, 255));
+        jPanel2.add(lbl_aviso);
+        lbl_aviso.setBounds(90, 380, 380, 20);
 
         jLabel8.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         jLabel8.setForeground(new java.awt.Color(255, 255, 255));
@@ -146,6 +153,12 @@ public class agendamento extends javax.swing.JFrame {
         jLabel9.setText("Nome");
         jPanel2.add(jLabel9);
         jLabel9.setBounds(90, 260, 61, 20);
+
+        jLabel4.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        jLabel4.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel4.setText("Dia");
+        jPanel2.add(jLabel4);
+        jLabel4.setBounds(90, 120, 61, 20);
 
         getContentPane().add(jPanel2);
         jPanel2.setBounds(220, 0, 550, 540);
@@ -162,6 +175,25 @@ public class agendamento extends javax.swing.JFrame {
     private void btn_agendamentoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_agendamentoActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_btn_agendamentoActionPerformed
+    
+    private void setLabel(String texto, Color cor){
+         lbl_aviso.setText(texto);
+            lbl_aviso.setForeground(cor);
+    }
+    private void btn_agendarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_agendarActionPerformed
+        String servico = ((String) cmb_servico.getSelectedItem());
+        String animal = txt_animal.getText();
+        String dia = txt_dia.getText();
+        String nome = txt_nome.getText();
+        String telefone = txt_telefone.getText();
+        
+        if(animal.equals("") || 
+                dia.equals("") || nome.equals("") || telefone.equals("")){
+            setLabel("Preencha todos os campos", Color.red);
+        }else{
+            setLabel("Cadastrado com sucesso", Color.white);
+        }
+    }//GEN-LAST:event_btn_agendarActionPerformed
 
     /**
      * @param args the command line arguments
@@ -201,19 +233,20 @@ public class agendamento extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btn_agenda;
     private javax.swing.JButton btn_agendamento;
-    private javax.swing.JButton jButton3;
-    private javax.swing.JComboBox<String> jComboBox1;
+    private javax.swing.JButton btn_agendar;
+    private javax.swing.JComboBox<String> cmb_servico;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
-    private javax.swing.JTextField jTextField1;
-    private javax.swing.JTextField jTextField2;
-    private javax.swing.JTextField jTextField3;
-    private javax.swing.JTextField jTextField4;
+    private javax.swing.JLabel lbl_aviso;
+    private javax.swing.JTextField txt_animal;
+    private javax.swing.JTextField txt_dia;
+    private javax.swing.JTextField txt_nome;
+    private javax.swing.JTextField txt_telefone;
     // End of variables declaration//GEN-END:variables
 }
