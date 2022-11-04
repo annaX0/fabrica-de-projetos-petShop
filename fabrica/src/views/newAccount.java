@@ -2,7 +2,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
-package fabrica;
+package views;
 
 /**
  *
@@ -49,6 +49,7 @@ public class newAccount extends javax.swing.JFrame {
         jPanel2.setLayout(null);
 
         jTextField2.setForeground(new java.awt.Color(14, 14, 14));
+        jTextField2.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(140, 140, 140), 1, true));
         jTextField2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jTextField2ActionPerformed(evt);
@@ -69,6 +70,7 @@ public class newAccount extends javax.swing.JFrame {
         jPanel2.add(jLabel6);
         jLabel6.setBounds(80, 240, 37, 16);
 
+        jTextField6.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(140, 140, 140), 1, true));
         jPanel2.add(jTextField6);
         jTextField6.setBounds(80, 260, 350, 25);
 
@@ -78,6 +80,7 @@ public class newAccount extends javax.swing.JFrame {
         jPanel2.add(jLabel7);
         jLabel7.setBounds(80, 310, 150, 16);
 
+        jTextField7.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(140, 140, 140), 1, true));
         jPanel2.add(jTextField7);
         jTextField7.setBounds(80, 330, 350, 25);
 
