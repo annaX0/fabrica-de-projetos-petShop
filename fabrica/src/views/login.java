@@ -43,8 +43,10 @@ public class login extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Login");
+        setMinimumSize(new java.awt.Dimension(1142, 637));
         setName("login"); // NOI18N
-        getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        setResizable(false);
+        getContentPane().setLayout(null);
 
         panel1.setBackground(new java.awt.Color(0, 63, 89));
 
@@ -68,7 +70,8 @@ public class login extends javax.swing.JFrame {
                 .addContainerGap(308, Short.MAX_VALUE))
         );
 
-        getContentPane().add(panel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 370, 640));
+        getContentPane().add(panel1);
+        panel1.setBounds(0, 0, 370, 640);
 
         panel2.setBackground(new java.awt.Color(250, 250, 250));
         panel2.setForeground(new java.awt.Color(0, 25, 35));
@@ -163,7 +166,8 @@ public class login extends javax.swing.JFrame {
         panel2.add(panel3);
         panel3.setBounds(430, 125, 35, 7);
 
-        getContentPane().add(panel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 0, 770, 640));
+        getContentPane().add(panel2);
+        panel2.setBounds(370, 0, 770, 640);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
