@@ -35,7 +35,7 @@ public class login extends javax.swing.JFrame {
         jTextField1 = new javax.swing.JTextField();
         label4 = new java.awt.Label();
         jTextField2 = new javax.swing.JTextField();
-        jButton2 = new javax.swing.JButton();
+        btn_cadastrar = new javax.swing.JButton();
         jButton3 = new javax.swing.JButton();
         canvas1 = new java.awt.Canvas();
         canvas2 = new java.awt.Canvas();
@@ -43,7 +43,9 @@ public class login extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Login");
+        setMinimumSize(new java.awt.Dimension(1142, 637));
         setName("login"); // NOI18N
+        setResizable(false);
         getContentPane().setLayout(null);
 
         panel1.setBackground(new java.awt.Color(0, 63, 89));
@@ -73,7 +75,6 @@ public class login extends javax.swing.JFrame {
 
         panel2.setBackground(new java.awt.Color(250, 250, 250));
         panel2.setForeground(new java.awt.Color(0, 25, 35));
-        panel2.setMaximumSize(new java.awt.Dimension(770, 640));
         panel2.setName("login"); // NOI18N
         panel2.setLayout(null);
 
@@ -102,26 +103,26 @@ public class login extends javax.swing.JFrame {
         panel2.add(jTextField2);
         jTextField2.setBounds(180, 340, 488, 45);
 
-        jButton2.setBackground(new java.awt.Color(255, 204, 204));
-        jButton2.setFont(new java.awt.Font("SansSerif", 1, 18)); // NOI18N
-        jButton2.setForeground(new java.awt.Color(255, 255, 255));
-        jButton2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/assets/cad.png"))); // NOI18N
-        jButton2.setText("Cadastre-se");
-        jButton2.setBorderPainted(false);
-        jButton2.setContentAreaFilled(false);
-        jButton2.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        jButton2.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        jButton2.setIconTextGap(1);
-        jButton2.setMargin(new java.awt.Insets(0, 0, 0, 0));
-        jButton2.setMaximumSize(new java.awt.Dimension(230, 120));
-        jButton2.setMinimumSize(new java.awt.Dimension(219, 120));
-        jButton2.addActionListener(new java.awt.event.ActionListener() {
+        btn_cadastrar.setBackground(new java.awt.Color(255, 204, 204));
+        btn_cadastrar.setFont(new java.awt.Font("SansSerif", 1, 18)); // NOI18N
+        btn_cadastrar.setForeground(new java.awt.Color(255, 255, 255));
+        btn_cadastrar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/assets/cad.png"))); // NOI18N
+        btn_cadastrar.setText("Cadastre-se");
+        btn_cadastrar.setBorderPainted(false);
+        btn_cadastrar.setContentAreaFilled(false);
+        btn_cadastrar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btn_cadastrar.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        btn_cadastrar.setIconTextGap(1);
+        btn_cadastrar.setMargin(new java.awt.Insets(0, 0, 0, 0));
+        btn_cadastrar.setMaximumSize(new java.awt.Dimension(230, 120));
+        btn_cadastrar.setMinimumSize(new java.awt.Dimension(219, 120));
+        btn_cadastrar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton2ActionPerformed(evt);
+                btn_cadastrarActionPerformed(evt);
             }
         });
-        panel2.add(jButton2);
-        jButton2.setBounds(450, 430, 196, 91);
+        panel2.add(btn_cadastrar);
+        btn_cadastrar.setBounds(450, 430, 196, 91);
 
         jButton3.setBackground(new java.awt.Color(255, 204, 204));
         jButton3.setFont(new java.awt.Font("SansSerif", 1, 18)); // NOI18N
@@ -167,7 +168,7 @@ public class login extends javax.swing.JFrame {
         panel3.setBounds(430, 125, 35, 7);
 
         getContentPane().add(panel2);
-        panel2.setBounds(370, 0, 770, 640);
+        panel2.setBounds(370, 10, 770, 640);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -176,9 +177,11 @@ public class login extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_jButton3ActionPerformed
 
-    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jButton2ActionPerformed
+    private void btn_cadastrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_cadastrarActionPerformed
+        newAccount cadastrar = new newAccount();
+        cadastrar.setVisible(true);
+        dispose();
+    }//GEN-LAST:event_btn_cadastrarActionPerformed
 
     /**
      * @param args the command line arguments
@@ -216,9 +219,9 @@ public class login extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btn_cadastrar;
     private java.awt.Canvas canvas1;
     private java.awt.Canvas canvas2;
-    private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JTextField jTextField1;

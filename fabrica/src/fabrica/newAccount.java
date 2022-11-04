@@ -34,7 +34,7 @@ public class newAccount extends javax.swing.JFrame {
         jTextField6 = new javax.swing.JTextField();
         jLabel7 = new javax.swing.JLabel();
         jTextField7 = new javax.swing.JTextField();
-        jButton2 = new javax.swing.JButton();
+        btn_login = new javax.swing.JButton();
         jLabel8 = new javax.swing.JLabel();
         jButton3 = new javax.swing.JButton();
 
@@ -49,7 +49,6 @@ public class newAccount extends javax.swing.JFrame {
         jPanel2.setLayout(null);
 
         jTextField2.setForeground(new java.awt.Color(14, 14, 14));
-        jTextField2.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(140, 140, 140), 1, true));
         jTextField2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jTextField2ActionPerformed(evt);
@@ -70,7 +69,6 @@ public class newAccount extends javax.swing.JFrame {
         jPanel2.add(jLabel6);
         jLabel6.setBounds(80, 240, 37, 16);
 
-        jTextField6.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(140, 140, 140), 1, true));
         jPanel2.add(jTextField6);
         jTextField6.setBounds(80, 260, 350, 25);
 
@@ -80,22 +78,21 @@ public class newAccount extends javax.swing.JFrame {
         jPanel2.add(jLabel7);
         jLabel7.setBounds(80, 310, 150, 16);
 
-        jTextField7.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(140, 140, 140), 1, true));
         jPanel2.add(jTextField7);
         jTextField7.setBounds(80, 330, 350, 25);
 
-        jButton2.setBackground(new java.awt.Color(0, 63, 89));
-        jButton2.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-        jButton2.setForeground(new java.awt.Color(255, 255, 255));
-        jButton2.setText("Já tenho uma conta");
-        jButton2.setBorder(null);
-        jButton2.addActionListener(new java.awt.event.ActionListener() {
+        btn_login.setBackground(new java.awt.Color(0, 63, 89));
+        btn_login.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        btn_login.setForeground(new java.awt.Color(255, 255, 255));
+        btn_login.setText("Já tenho uma conta");
+        btn_login.setBorder(null);
+        btn_login.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton2ActionPerformed(evt);
+                btn_loginActionPerformed(evt);
             }
         });
-        jPanel2.add(jButton2);
-        jButton2.setBounds(160, 440, 190, 30);
+        jPanel2.add(btn_login);
+        btn_login.setBounds(160, 440, 190, 30);
 
         jLabel8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/assets/iconDog.png"))); // NOI18N
         jPanel2.add(jLabel8);
@@ -142,9 +139,12 @@ public class newAccount extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jButton2ActionPerformed
+    private void btn_loginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_loginActionPerformed
+        login logar = new login();
+        
+        logar.setVisible(true);
+        dispose();
+    }//GEN-LAST:event_btn_loginActionPerformed
 
     private void jTextField2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField2ActionPerformed
         // TODO add your handling code here:
@@ -186,7 +186,7 @@ public class newAccount extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton2;
+    private javax.swing.JButton btn_login;
     private javax.swing.JButton jButton3;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel6;
