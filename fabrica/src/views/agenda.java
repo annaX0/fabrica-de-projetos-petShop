@@ -2,7 +2,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
-package fabrica;
+package views;
 
 /**
  *
@@ -28,8 +28,8 @@ public class agenda extends javax.swing.JFrame {
 
         jPanel1 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
-        jButton1 = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
+        btn_agenda = new javax.swing.JButton();
+        btn_agendamento = new javax.swing.JButton();
         jPanel2 = new javax.swing.JPanel();
         jScrollPane1 = new javax.swing.JScrollPane();
         jTable1 = new javax.swing.JTable();
@@ -48,31 +48,36 @@ public class agenda extends javax.swing.JFrame {
         jPanel1.add(jLabel1);
         jLabel1.setBounds(0, 70, 220, 30);
 
-        jButton1.setBackground(new java.awt.Color(231, 168, 95));
-        jButton1.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
-        jButton1.setForeground(new java.awt.Color(255, 255, 255));
-        jButton1.setText("AGENDA");
-        jButton1.setBorder(null);
-        jButton1.setRequestFocusEnabled(false);
-        jButton1.setRolloverEnabled(false);
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
+        btn_agenda.setBackground(new java.awt.Color(231, 168, 95));
+        btn_agenda.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        btn_agenda.setForeground(new java.awt.Color(255, 255, 255));
+        btn_agenda.setText("AGENDA");
+        btn_agenda.setBorder(null);
+        btn_agenda.setRequestFocusEnabled(false);
+        btn_agenda.setRolloverEnabled(false);
+        btn_agenda.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                btn_agendaActionPerformed(evt);
             }
         });
-        jPanel1.add(jButton1);
-        jButton1.setBounds(0, 190, 220, 48);
+        jPanel1.add(btn_agenda);
+        btn_agenda.setBounds(0, 190, 220, 48);
 
-        jButton2.setBackground(new java.awt.Color(231, 168, 95));
-        jButton2.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
-        jButton2.setForeground(new java.awt.Color(255, 255, 255));
-        jButton2.setText("AGENDAMENTO");
-        jButton2.setBorder(null);
-        jButton2.setBorderPainted(false);
-        jButton2.setFocusPainted(false);
-        jButton2.setFocusable(false);
-        jPanel1.add(jButton2);
-        jButton2.setBounds(0, 140, 220, 48);
+        btn_agendamento.setBackground(new java.awt.Color(231, 168, 95));
+        btn_agendamento.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        btn_agendamento.setForeground(new java.awt.Color(255, 255, 255));
+        btn_agendamento.setText("AGENDAMENTO");
+        btn_agendamento.setBorder(null);
+        btn_agendamento.setBorderPainted(false);
+        btn_agendamento.setFocusPainted(false);
+        btn_agendamento.setFocusable(false);
+        btn_agendamento.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_agendamentoActionPerformed(evt);
+            }
+        });
+        jPanel1.add(btn_agendamento);
+        btn_agendamento.setBounds(0, 140, 220, 48);
 
         getContentPane().add(jPanel1);
         jPanel1.setBounds(0, 0, 220, 540);
@@ -127,9 +132,15 @@ public class agenda extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+    private void btn_agendaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_agendaActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jButton1ActionPerformed
+    }//GEN-LAST:event_btn_agendaActionPerformed
+
+    private void btn_agendamentoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_agendamentoActionPerformed
+       agendamento agendament = new agendamento();
+       agendament.setVisible(true);
+       dispose();
+    }//GEN-LAST:event_btn_agendamentoActionPerformed
 
     /**
      * @param args the command line arguments
@@ -167,8 +178,8 @@ public class agenda extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
+    private javax.swing.JButton btn_agenda;
+    private javax.swing.JButton btn_agendamento;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;

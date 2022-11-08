@@ -3,6 +3,11 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
 package views;
+<<<<<<< HEAD
+
+import java.awt.Color;
+=======
+>>>>>>> master
 
 /**
  *
@@ -28,15 +33,16 @@ public class newAccount extends javax.swing.JFrame {
 
         jPanel1 = new javax.swing.JPanel();
         jPanel2 = new javax.swing.JPanel();
-        jTextField2 = new javax.swing.JTextField();
-        jLabel2 = new javax.swing.JLabel();
+        txt_user = new javax.swing.JTextField();
         jLabel6 = new javax.swing.JLabel();
-        jTextField6 = new javax.swing.JTextField();
-        jLabel7 = new javax.swing.JLabel();
-        jTextField7 = new javax.swing.JTextField();
-        jButton2 = new javax.swing.JButton();
+        txt_senha = new javax.swing.JTextField();
+        txt_senhadois = new javax.swing.JTextField();
+        btn_login = new javax.swing.JButton();
         jLabel8 = new javax.swing.JLabel();
-        jButton3 = new javax.swing.JButton();
+        btn_criar = new javax.swing.JButton();
+        jLabel3 = new javax.swing.JLabel();
+        jLabel9 = new javax.swing.JLabel();
+        lbl_aviso = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -48,21 +54,15 @@ public class newAccount extends javax.swing.JFrame {
         jPanel2.setMinimumSize(new java.awt.Dimension(473, 509));
         jPanel2.setLayout(null);
 
-        jTextField2.setForeground(new java.awt.Color(14, 14, 14));
-        jTextField2.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(140, 140, 140), 1, true));
-        jTextField2.addActionListener(new java.awt.event.ActionListener() {
+        txt_user.setForeground(new java.awt.Color(14, 14, 14));
+        txt_user.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(140, 140, 140), 1, true));
+        txt_user.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField2ActionPerformed(evt);
+                txt_userActionPerformed(evt);
             }
         });
-        jPanel2.add(jTextField2);
-        jTextField2.setBounds(80, 190, 350, 25);
-
-        jLabel2.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-        jLabel2.setForeground(new java.awt.Color(51, 51, 51));
-        jLabel2.setText("E-mail:");
-        jPanel2.add(jLabel2);
-        jLabel2.setBounds(80, 170, 50, 16);
+        jPanel2.add(txt_user);
+        txt_user.setBounds(80, 190, 350, 25);
 
         jLabel6.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         jLabel6.setForeground(new java.awt.Color(51, 51, 51));
@@ -70,44 +70,57 @@ public class newAccount extends javax.swing.JFrame {
         jPanel2.add(jLabel6);
         jLabel6.setBounds(80, 240, 37, 16);
 
-        jTextField6.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(140, 140, 140), 1, true));
-        jPanel2.add(jTextField6);
-        jTextField6.setBounds(80, 260, 350, 25);
+        txt_senha.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(140, 140, 140), 1, true));
+        jPanel2.add(txt_senha);
+        txt_senha.setBounds(80, 260, 350, 25);
 
-        jLabel7.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-        jLabel7.setForeground(new java.awt.Color(51, 51, 51));
-        jLabel7.setText("Confirme a senha");
-        jPanel2.add(jLabel7);
-        jLabel7.setBounds(80, 310, 150, 16);
+        txt_senhadois.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(140, 140, 140), 1, true));
+        jPanel2.add(txt_senhadois);
+        txt_senhadois.setBounds(80, 330, 350, 25);
 
-        jTextField7.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(140, 140, 140), 1, true));
-        jPanel2.add(jTextField7);
-        jTextField7.setBounds(80, 330, 350, 25);
-
-        jButton2.setBackground(new java.awt.Color(0, 63, 89));
-        jButton2.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-        jButton2.setForeground(new java.awt.Color(255, 255, 255));
-        jButton2.setText("Já tenho uma conta");
-        jButton2.setBorder(null);
-        jButton2.addActionListener(new java.awt.event.ActionListener() {
+        btn_login.setBackground(new java.awt.Color(0, 63, 89));
+        btn_login.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        btn_login.setForeground(new java.awt.Color(255, 255, 255));
+        btn_login.setText("Já tenho uma conta");
+        btn_login.setBorder(null);
+        btn_login.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton2ActionPerformed(evt);
+                btn_loginActionPerformed(evt);
             }
         });
-        jPanel2.add(jButton2);
-        jButton2.setBounds(160, 440, 190, 30);
+        jPanel2.add(btn_login);
+        btn_login.setBounds(160, 440, 190, 30);
 
         jLabel8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/assets/iconDog.png"))); // NOI18N
         jPanel2.add(jLabel8);
         jLabel8.setBounds(230, 30, 60, 60);
 
-        jButton3.setBackground(new java.awt.Color(240, 140, 23));
-        jButton3.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-        jButton3.setForeground(new java.awt.Color(255, 255, 255));
-        jButton3.setText("Criar");
-        jButton3.setBorder(null);
-        jPanel2.add(jButton3);
-        jButton3.setBounds(200, 390, 120, 30);
+        btn_criar.setBackground(new java.awt.Color(240, 140, 23));
+        btn_criar.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        btn_criar.setForeground(new java.awt.Color(255, 255, 255));
+        btn_criar.setText("Criar");
+        btn_criar.setBorder(null);
+        btn_criar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_criarActionPerformed(evt);
+            }
+        });
+        jPanel2.add(btn_criar);
+        btn_criar.setBounds(200, 390, 120, 30);
+
+        jLabel3.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        jLabel3.setForeground(new java.awt.Color(51, 51, 51));
+        jLabel3.setText("E-mail:");
+        jPanel2.add(jLabel3);
+        jLabel3.setBounds(80, 170, 50, 16);
+
+        jLabel9.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        jLabel9.setForeground(new java.awt.Color(51, 51, 51));
+        jLabel9.setText("Confirme a senha");
+        jPanel2.add(jLabel9);
+        jLabel9.setBounds(80, 310, 150, 16);
+        jPanel2.add(lbl_aviso);
+        lbl_aviso.setBounds(80, 360, 350, 20);
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -142,13 +155,49 @@ public class newAccount extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jButton2ActionPerformed
+    private void btn_loginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_loginActionPerformed
+        login logar = new login();
+        
+        logar.setVisible(true);
+        dispose();
+    }//GEN-LAST:event_btn_loginActionPerformed
 
-    private void jTextField2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField2ActionPerformed
+    private void txt_userActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txt_userActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField2ActionPerformed
+    }//GEN-LAST:event_txt_userActionPerformed
+    
+    private void setLabel(String texto, Color cor){
+        lbl_aviso.setText(texto);
+        lbl_aviso.setForeground(cor);
+    }
+    
+    private Boolean senhasIguais(String senhaUm, String senhaDois){
+      
+        if(senhaUm.equals(senhaDois)){
+                return true;
+            }
+        return false;
+    }
+    private void btn_criarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_criarActionPerformed
+        String user = txt_user.getText();
+        String senha = txt_senha.getText();
+        String senhadois = txt_senhadois.getText();
+        
+        if(!senha.equals("") && !senhadois.equals("") && !user.equals("")){
+            Boolean senhasValida = senhasIguais(senha,senhadois);
+                if(senhasValida == true){
+                setLabel("",Color.white);
+                //toda logica de cadastro no mysql
+               }else{
+                setLabel("Senhas incompativeis", Color.black);
+            } 
+        }else{
+            setLabel("Preencha os campos", Color.red);
+        }
+        
+        
+        
+    }//GEN-LAST:event_btn_criarActionPerformed
 
     /**
      * @param args the command line arguments
@@ -186,16 +235,17 @@ public class newAccount extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton2;
-    private javax.swing.JButton jButton3;
-    private javax.swing.JLabel jLabel2;
+    private javax.swing.JButton btn_criar;
+    private javax.swing.JButton btn_login;
+    private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel6;
-    private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
+    private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
-    private javax.swing.JTextField jTextField2;
-    private javax.swing.JTextField jTextField6;
-    private javax.swing.JTextField jTextField7;
+    private javax.swing.JLabel lbl_aviso;
+    private javax.swing.JTextField txt_senha;
+    private javax.swing.JTextField txt_senhadois;
+    private javax.swing.JTextField txt_user;
     // End of variables declaration//GEN-END:variables
 }
