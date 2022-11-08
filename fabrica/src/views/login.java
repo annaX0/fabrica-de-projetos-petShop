@@ -3,11 +3,8 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
 package views;
-<<<<<<< HEAD
 
 import java.awt.Color;
-=======
->>>>>>> master
 
 /**
  *
@@ -184,7 +181,6 @@ public class login extends javax.swing.JFrame {
         panel2.add(panel3);
         panel3.setBounds(430, 125, 35, 7);
 
-<<<<<<< HEAD
         label5.setFont(new java.awt.Font("SansSerif", 0, 50)); // NOI18N
         label5.setText("Login");
         panel2.add(label5);
@@ -192,10 +188,6 @@ public class login extends javax.swing.JFrame {
 
         getContentPane().add(panel2);
         panel2.setBounds(370, 10, 770, 640);
-=======
-        getContentPane().add(panel2);
-        panel2.setBounds(370, 0, 770, 640);
->>>>>>> master
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
