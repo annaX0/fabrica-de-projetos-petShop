@@ -3,8 +3,11 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
 package views;
+<<<<<<< HEAD
 
 import java.awt.Color;
+=======
+>>>>>>> master
 
 /**
  *

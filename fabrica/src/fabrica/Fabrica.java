@@ -3,9 +3,13 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Main.java to edit this template
  */
 package fabrica;
+<<<<<<< HEAD
 
 import views.login;
 
+=======
+import views.login;
+>>>>>>> master
 /**
  *
  * @author annas
@@ -19,6 +23,10 @@ public class Fabrica {
         login logar = new login();
         
         logar.setVisible(true);
+<<<<<<< HEAD
+=======
+          
+>>>>>>> master
     }
     
 }
