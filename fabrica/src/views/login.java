@@ -5,13 +5,17 @@
 package views;
 
 import java.awt.Color;
+import connections.MySQL;
+import java.sql.SQLException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 /**
  *
  * @author annas
  */
 public class login extends javax.swing.JFrame {
-
+    MySQL conectar = new MySQL();
     /**
      * Creates new form login
      */
@@ -19,14 +23,48 @@ public class login extends javax.swing.JFrame {
         initComponents();
     }
     
-    private Boolean Logar(String usuario, String senha){
+    private Boolean FuncionarioExistente(String usuario) throws SQLException{
+        this.conectar.conectaBanco();
+        String resultado = "";
+        String comando = "SELECT nome from funcionario where nome = '" + usuario + "';";
+                
+        this.conectar.executarSQL(comando);
         
-        String senhaBanco = "123"; //fazer um comando sql para receber a senha e usuario do banco para substituir aqui
-        String usuarioBanco = "teste"; // checar se o usuario existe claro antes de trazer os dados
-        
-        if(usuario.equals(usuarioBanco) && senha.equals(senhaBanco)){
-            return true;
+        while (this.conectar.getResultSet().next()) {
+             resultado = this.conectar.getResultSet().getString(1);
+             
+             if(!resultado.equals("")) return true;
         }
+                return false;
+    }
+    private Boolean Logar(String usuario, String senha) throws SQLException{
+        
+        this.conectar.conectaBanco();
+        String usuarioBanco = "";
+        String comando = "SELECT nome from funcionario where nome = '" + usuario + "';";
+                
+        this.conectar.executarSQL(comando);
+        
+        while (this.conectar.getResultSet().next()) {
+             usuarioBanco = this.conectar.getResultSet().getString(1);
+        }
+        System.out.println("USUARIO: " + usuarioBanco);
+        String senhaBanco = "";
+        comando = "Select senha from funcionario where nome = '" + usuario + "';";
+        
+        this.conectar.executarSQL(comando);
+            while (this.conectar.getResultSet().next()) {
+            senhaBanco = this.conectar.getResultSet().getString(1);
+        }
+            System.out.println("SENHA DO BANCO: " + senhaBanco);
+        Boolean existe = FuncionarioExistente(usuario);
+        if(existe){
+            setLabel("USUARIO EXISTE", Color.yellow);
+         if(usuario.equals(usuarioBanco) && senha.equals(senhaBanco)){
+            return true;
+            }
+        }else{setLabel("USUARIO NÃO EXISTE", Color.yellow);}
+       
         return false;
     }
     
@@ -197,15 +235,21 @@ public class login extends javax.swing.JFrame {
         String senha = txt_senha.getText();
         
         if(!user.equals("") && !senha.equals("")){ //Checa se os campos foram preenchidos
-            Boolean logado = Logar(user, senha);
-            
-            if(logado){ //se o login for sucesso
+            Boolean logado;
+            try {
+                logado = Logar(user, senha);
+                if(logado){ //se o login for sucesso
                 agendamento agendament = new agendamento();
                 agendament.setVisible(true);
                 dispose();
             }else{ //se o login foi falho
                 setLabel("Credenciais erradas", Color.red);
             }
+            } catch (SQLException ex) {
+                Logger.getLogger(login.class.getName()).log(Level.SEVERE, null, ex);
+            }
+            
+            
         
         }else{ //se os campos estiverem vazios
             setLabel("Preencha os campos", Color.red);
