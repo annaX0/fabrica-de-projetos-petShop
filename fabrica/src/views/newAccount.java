@@ -6,7 +6,6 @@ package views;
 
 import java.awt.Color;
 
-
 /**
  *
  * @author annas
