@@ -5,6 +5,8 @@
 package fabrica;
 
 import views.login;
+import connections.Testes;
+import java.sql.SQLException;
 
 /**
  *
@@ -15,10 +17,12 @@ public class Fabrica {
     /**
      * @param args the command line arguments
      */
-    public static void main(String[] args) {
+    public static void main(String[] args) throws SQLException {
         login logar = new login();
-        
+
         logar.setVisible(true);
+       
+        
     }
     
 }
