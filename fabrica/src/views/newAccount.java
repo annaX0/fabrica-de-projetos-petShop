@@ -5,18 +5,45 @@
 package views;
 
 import java.awt.Color;
+import objects.Funcionario;
+import connections.MySQL;
+import javax.swing.JOptionPane;
 
 /**
  *
  * @author annas
  */
 public class newAccount extends javax.swing.JFrame {
+       MySQL conectar = new MySQL();
+       Funcionario novoFuncionario = new Funcionario();
 
     /**
      * Creates new form newAccount
      */
     public newAccount() {
         initComponents();
+    }
+    private void cadNovoFuncionario(Funcionario novoFuncionario){
+    this.conectar.conectaBanco();
+    novoFuncionario.setEmail(txt_user.getText());
+    novoFuncionario.setSenha(txt_senha.getText());
+    
+    try{
+    this.conectar.insertSQL("INSERT INTO funcionario("
+    + "email,"
+    + "senha"
+    + ")VALUES("
+    + "'" +novoFuncionario.getEmail()+"',"
+    + "'" +novoFuncionario.getSenha()+ "'"
+    + ");");
+     } catch (Exception e){
+            System.err.println("Erro ao cadastrar Usuario" + e.getMessage());
+            JOptionPane.showMessageDialog(null, "Erro ao cadastrar Usuario");
+        } finally{
+            this.conectar.fechaBanco();
+            JOptionPane.showMessageDialog(null, "Usuario cadastro com sucesso");
+        }
+
     }
 
     /**
