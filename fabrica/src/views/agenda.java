@@ -124,7 +124,7 @@ public class agenda extends javax.swing.JFrame {
         jScrollPane1.setViewportView(jTable1);
 
         jPanel2.add(jScrollPane1);
-        jScrollPane1.setBounds(30, 50, 490, 450);
+        jScrollPane1.setBounds(30, 40, 500, 450);
 
         getContentPane().add(jPanel2);
         jPanel2.setBounds(220, 0, 550, 540);
@@ -137,7 +137,7 @@ public class agenda extends javax.swing.JFrame {
     }//GEN-LAST:event_btn_agendaActionPerformed
 
     private void btn_agendamentoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_agendamentoActionPerformed
-       agendamento agendament = new agendamento();
+       newAgendamento agendament = new newAgendamento();
        agendament.setVisible(true);
        dispose();
     }//GEN-LAST:event_btn_agendamentoActionPerformed

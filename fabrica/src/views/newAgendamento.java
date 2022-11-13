@@ -5,19 +5,60 @@
 package views;
 
 import java.awt.Color;
+import objects.AgendamentoAnimal;
+import connections.MySQL;
+import javax.swing.JOptionPane;
 
 /**
  *
  * @author annas
  */
-public class agendamento extends javax.swing.JFrame {
-
+public class newAgendamento extends javax.swing.JFrame {
+        MySQL conectar = new MySQL();
+        AgendamentoAnimal novoAgendamento = new AgendamentoAnimal();
     /**
      * Creates new form agendamento
      */
-    public agendamento() {
+    public newAgendamento() {
         initComponents();
     }
+    private void cadNovoAgendamento(AgendamentoAnimal novoAgendamento){
+    this.conectar.conectaBanco();
+    novoAgendamento.setAnimal((String)cmb_animal.getSelectedItem());
+    novoAgendamento.setNomeAnimal(txt_nome_animal.getText());
+    novoAgendamento.setNomeDono(txt_nome_dono.getText());
+    novoAgendamento.setTelefone(txt_telefone.getText());
+    novoAgendamento.setDia((String)cmb_dia.getSelectedItem());
+    novoAgendamento.setServico((String)cmb_servico.getSelectedItem());
+    
+    //String Animal;String nomeDono;String telefone;String dia;String servico;
+    
+    try{
+    this.conectar.insertSQL("INSERT INTO agendamento("
+    + "animal,"
+    + "nomeAnimal,"
+    + "nomeDono,"
+    + "telefone,"
+    + "dia,"
+    + "servico"
+    + ")VALUES("
+    + "'" +novoAgendamento.getAnimal()+"',"
+    + "'" +novoAgendamento.getNomeAnimal()+ "',"
+    + "'" +novoAgendamento.getNomeDono()+ "',"
+    + "'" +novoAgendamento.getTelefone()+"',"
+    + "'" +novoAgendamento.getDia()+ "',"
+    + "'" +novoAgendamento.getServico()+"'"
+    + ");");
+     } catch (Exception e){
+            System.err.println("Erro ao cadastrar Usuario" + e.getMessage());
+            JOptionPane.showMessageDialog(null, "Erro ao cadastrar Usuario");
+        } finally{
+            this.conectar.fechaBanco();
+            JOptionPane.showMessageDialog(null, "Usuario cadastrado com sucesso");
+        }
+
+    }
+
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -34,17 +75,19 @@ public class agendamento extends javax.swing.JFrame {
         btn_agendamento = new javax.swing.JButton();
         jPanel2 = new javax.swing.JPanel();
         jLabel2 = new javax.swing.JLabel();
-        cmb_servico = new javax.swing.JComboBox<>();
-        txt_telefone = new javax.swing.JTextField();
         btn_agendar = new javax.swing.JButton();
         jLabel7 = new javax.swing.JLabel();
-        txt_dia = new javax.swing.JTextField();
-        txt_animal = new javax.swing.JTextField();
-        txt_nome = new javax.swing.JTextField();
+        txt_nome_dono = new javax.swing.JTextField();
+        txt_telefone = new javax.swing.JTextField();
         lbl_aviso = new javax.swing.JLabel();
         jLabel8 = new javax.swing.JLabel();
         jLabel9 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
+        cmb_animal = new javax.swing.JComboBox<>();
+        jLabel10 = new javax.swing.JLabel();
+        txt_nome_animal = new javax.swing.JTextField();
+        cmb_dia = new javax.swing.JComboBox<>();
+        cmb_servico = new javax.swing.JComboBox<>();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setMinimumSize(new java.awt.Dimension(767, 540));
@@ -101,17 +144,7 @@ public class agendamento extends javax.swing.JFrame {
         jLabel2.setForeground(new java.awt.Color(255, 255, 255));
         jLabel2.setText("Telefone");
         jPanel2.add(jLabel2);
-        jLabel2.setBounds(90, 330, 61, 20);
-
-        cmb_servico.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Gato", "Cachorro" }));
-        cmb_servico.setFocusable(false);
-        cmb_servico.setLightWeightPopupEnabled(false);
-        cmb_servico.setRequestFocusEnabled(false);
-        cmb_servico.setVerifyInputWhenFocusTarget(false);
-        jPanel2.add(cmb_servico);
-        cmb_servico.setBounds(90, 70, 380, 30);
-        jPanel2.add(txt_telefone);
-        txt_telefone.setBounds(90, 350, 380, 30);
+        jLabel2.setBounds(90, 230, 61, 20);
 
         btn_agendar.setBackground(new java.awt.Color(240, 140, 23));
         btn_agendar.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
@@ -123,42 +156,87 @@ public class agendamento extends javax.swing.JFrame {
             }
         });
         jPanel2.add(btn_agendar);
-        btn_agendar.setBounds(190, 420, 150, 40);
+        btn_agendar.setBounds(190, 440, 150, 40);
 
         jLabel7.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         jLabel7.setForeground(new java.awt.Color(255, 255, 255));
         jLabel7.setText("Serviço");
         jPanel2.add(jLabel7);
-        jLabel7.setBounds(90, 50, 61, 20);
-        jPanel2.add(txt_dia);
-        txt_dia.setBounds(90, 140, 380, 30);
-        jPanel2.add(txt_animal);
-        txt_animal.setBounds(90, 210, 380, 30);
-        jPanel2.add(txt_nome);
-        txt_nome.setBounds(90, 280, 380, 30);
+        jLabel7.setBounds(90, 350, 61, 20);
+        jPanel2.add(txt_nome_dono);
+        txt_nome_dono.setBounds(90, 190, 380, 30);
+        jPanel2.add(txt_telefone);
+        txt_telefone.setBounds(90, 250, 380, 30);
 
         lbl_aviso.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         lbl_aviso.setForeground(new java.awt.Color(255, 255, 255));
         jPanel2.add(lbl_aviso);
-        lbl_aviso.setBounds(90, 380, 380, 20);
+        lbl_aviso.setBounds(90, 410, 380, 20);
 
         jLabel8.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         jLabel8.setForeground(new java.awt.Color(255, 255, 255));
         jLabel8.setText("Animal");
         jPanel2.add(jLabel8);
-        jLabel8.setBounds(90, 190, 61, 20);
+        jLabel8.setBounds(90, 50, 61, 20);
 
         jLabel9.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         jLabel9.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel9.setText("Nome");
+        jLabel9.setText("Nome Dono");
         jPanel2.add(jLabel9);
-        jLabel9.setBounds(90, 260, 61, 20);
+        jLabel9.setBounds(90, 170, 100, 20);
 
         jLabel4.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         jLabel4.setForeground(new java.awt.Color(255, 255, 255));
         jLabel4.setText("Dia");
         jPanel2.add(jLabel4);
-        jLabel4.setBounds(90, 120, 61, 20);
+        jLabel4.setBounds(90, 290, 61, 20);
+
+        cmb_animal.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Gato", "Cachorro" }));
+        cmb_animal.setFocusable(false);
+        cmb_animal.setLightWeightPopupEnabled(false);
+        cmb_animal.setRequestFocusEnabled(false);
+        cmb_animal.setVerifyInputWhenFocusTarget(false);
+        cmb_animal.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cmb_animalActionPerformed(evt);
+            }
+        });
+        jPanel2.add(cmb_animal);
+        cmb_animal.setBounds(90, 70, 380, 30);
+
+        jLabel10.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        jLabel10.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel10.setText("Nome Animal");
+        jPanel2.add(jLabel10);
+        jLabel10.setBounds(90, 110, 100, 20);
+        jPanel2.add(txt_nome_animal);
+        txt_nome_animal.setBounds(90, 130, 380, 30);
+
+        cmb_dia.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Segunda", "Terca", "Quarta", "Quinta", "Sexta", "Sabado" }));
+        cmb_dia.setFocusable(false);
+        cmb_dia.setLightWeightPopupEnabled(false);
+        cmb_dia.setRequestFocusEnabled(false);
+        cmb_dia.setVerifyInputWhenFocusTarget(false);
+        cmb_dia.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cmb_diaActionPerformed(evt);
+            }
+        });
+        jPanel2.add(cmb_dia);
+        cmb_dia.setBounds(90, 310, 380, 30);
+
+        cmb_servico.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Banho", "Tosa", "Banho & Tosa" }));
+        cmb_servico.setFocusable(false);
+        cmb_servico.setLightWeightPopupEnabled(false);
+        cmb_servico.setRequestFocusEnabled(false);
+        cmb_servico.setVerifyInputWhenFocusTarget(false);
+        cmb_servico.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cmb_servicoActionPerformed(evt);
+            }
+        });
+        jPanel2.add(cmb_servico);
+        cmb_servico.setBounds(90, 370, 380, 30);
 
         getContentPane().add(jPanel2);
         jPanel2.setBounds(220, 0, 550, 540);
@@ -176,24 +254,21 @@ public class agendamento extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_btn_agendamentoActionPerformed
     
-    private void setLabel(String texto, Color cor){
-         lbl_aviso.setText(texto);
-            lbl_aviso.setForeground(cor);
-    }
     private void btn_agendarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_agendarActionPerformed
-        String servico = ((String) cmb_servico.getSelectedItem());
-        String animal = txt_animal.getText();
-        String dia = txt_dia.getText();
-        String nome = txt_nome.getText();
-        String telefone = txt_telefone.getText();
-        
-        if(animal.equals("") || 
-                dia.equals("") || nome.equals("") || telefone.equals("")){
-            setLabel("Preencha todos os campos", Color.red);
-        }else{
-            setLabel("Cadastrado com sucesso", Color.white);
-        }
+        cadNovoAgendamento(novoAgendamento);
     }//GEN-LAST:event_btn_agendarActionPerformed
+
+    private void cmb_servicoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cmb_servicoActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_cmb_servicoActionPerformed
+
+    private void cmb_animalActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cmb_animalActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_cmb_animalActionPerformed
+
+    private void cmb_diaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cmb_diaActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_cmb_diaActionPerformed
 
     /**
      * @param args the command line arguments
@@ -212,20 +287,21 @@ public class agendamento extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(agendamento.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(newAgendamento.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(agendamento.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(newAgendamento.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(agendamento.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(newAgendamento.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(agendamento.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(newAgendamento.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new agendamento().setVisible(true);
+                new newAgendamento().setVisible(true);
             }
         });
     }
@@ -234,8 +310,11 @@ public class agendamento extends javax.swing.JFrame {
     private javax.swing.JButton btn_agenda;
     private javax.swing.JButton btn_agendamento;
     private javax.swing.JButton btn_agendar;
+    private javax.swing.JComboBox<String> cmb_animal;
+    private javax.swing.JComboBox<String> cmb_dia;
     private javax.swing.JComboBox<String> cmb_servico;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel7;
@@ -244,9 +323,10 @@ public class agendamento extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JLabel lbl_aviso;
-    private javax.swing.JTextField txt_animal;
-    private javax.swing.JTextField txt_dia;
-    private javax.swing.JTextField txt_nome;
+    private javax.swing.JTextField txt_nome_animal;
+    private javax.swing.JTextField txt_nome_dono;
     private javax.swing.JTextField txt_telefone;
     // End of variables declaration//GEN-END:variables
+
+    
 }

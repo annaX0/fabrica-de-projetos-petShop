@@ -11,6 +11,21 @@ package objects;
 public class Funcionario {
     String email;
     String senha;
+    String senhaDois;
+
+    public void setSenhaDois(String senhaDois) {
+        this.senhaDois = senhaDois;
+    }
+
+    public String getSenhaDois() {
+        return senhaDois;
+    }
+
+    public Funcionario(String email, String senha, String senhaDois) {
+        this.email = email;
+        this.senha = senha;
+        this.senhaDois = senhaDois;
+    }
     
 
     public Funcionario(String email, String senha) {

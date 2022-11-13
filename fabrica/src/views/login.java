@@ -239,7 +239,7 @@ public class login extends javax.swing.JFrame {
             try {
                 logado = Logar(user, senha);
                 if(logado){ //se o login for sucesso
-                agendamento agendament = new agendamento();
+                newAgendamento agendament = new newAgendamento();
                 agendament.setVisible(true);
                 dispose();
             }else{ //se o login foi falho

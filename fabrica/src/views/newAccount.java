@@ -28,6 +28,7 @@ public class newAccount extends javax.swing.JFrame {
     novoFuncionario.setEmail(txt_user.getText());
     novoFuncionario.setSenha(txt_senha.getText());
     
+    
     try{
     this.conectar.insertSQL("INSERT INTO funcionario("
     + "email,"
@@ -35,13 +36,14 @@ public class newAccount extends javax.swing.JFrame {
     + ")VALUES("
     + "'" +novoFuncionario.getEmail()+"',"
     + "'" +novoFuncionario.getSenha()+ "'"
+    
     + ");");
      } catch (Exception e){
             System.err.println("Erro ao cadastrar Usuario" + e.getMessage());
             JOptionPane.showMessageDialog(null, "Erro ao cadastrar Usuario");
         } finally{
             this.conectar.fechaBanco();
-            JOptionPane.showMessageDialog(null, "Usuario cadastro com sucesso");
+            JOptionPane.showMessageDialog(null, "Usuario cadastrado com sucesso");
         }
 
     }
@@ -95,10 +97,20 @@ public class newAccount extends javax.swing.JFrame {
         jLabel6.setBounds(80, 240, 37, 16);
 
         txt_senha.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(140, 140, 140), 1, true));
+        txt_senha.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txt_senhaActionPerformed(evt);
+            }
+        });
         jPanel2.add(txt_senha);
         txt_senha.setBounds(80, 260, 350, 25);
 
         txt_senhadois.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(140, 140, 140), 1, true));
+        txt_senhadois.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txt_senhadoisActionPerformed(evt);
+            }
+        });
         jPanel2.add(txt_senhadois);
         txt_senhadois.setBounds(80, 330, 350, 25);
 
@@ -211,6 +223,7 @@ public class newAccount extends javax.swing.JFrame {
             Boolean senhasValida = senhasIguais(senha,senhadois);
                 if(senhasValida == true){
                 setLabel("",Color.white);
+                cadNovoFuncionario(novoFuncionario);
                 //toda logica de cadastro no mysql
                }else{
                 setLabel("Senhas incompativeis", Color.black);
@@ -222,6 +235,14 @@ public class newAccount extends javax.swing.JFrame {
         
         
     }//GEN-LAST:event_btn_criarActionPerformed
+
+    private void txt_senhaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txt_senhaActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txt_senhaActionPerformed
+
+    private void txt_senhadoisActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txt_senhadoisActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txt_senhadoisActionPerformed
 
     /**
      * @param args the command line arguments
