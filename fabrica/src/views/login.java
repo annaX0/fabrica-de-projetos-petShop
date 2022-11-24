@@ -26,7 +26,7 @@ public class login extends javax.swing.JFrame {
     private Boolean FuncionarioExistente(String usuario) throws SQLException{
         this.conectar.conectaBanco();
         String resultado = "";
-        String comando = "SELECT nome from funcionario where nome = '" + usuario + "';";
+        String comando = "SELECT email from funcionario where email = '" + usuario + "';";
                 
         this.conectar.executarSQL(comando);
         
@@ -41,7 +41,7 @@ public class login extends javax.swing.JFrame {
         
         this.conectar.conectaBanco();
         String usuarioBanco = "";
-        String comando = "SELECT nome from funcionario where nome = '" + usuario + "';";
+        String comando = "SELECT email from funcionario where email  = '" + usuario + "';";
                 
         this.conectar.executarSQL(comando);
         
@@ -50,7 +50,7 @@ public class login extends javax.swing.JFrame {
         }
         System.out.println("USUARIO: " + usuarioBanco);
         String senhaBanco = "";
-        comando = "Select senha from funcionario where nome = '" + usuario + "';";
+        comando = "Select senha from funcionario where senha = '" + usuario + "';";
         
         this.conectar.executarSQL(comando);
             while (this.conectar.getResultSet().next()) {

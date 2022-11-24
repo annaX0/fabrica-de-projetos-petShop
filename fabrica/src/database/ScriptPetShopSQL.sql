@@ -3,7 +3,7 @@ use petshop;
 
 create table funcionario(
 idFuncionario int primary key auto_increment,
-nome VARCHAR(60) unique,
+email VARCHAR(60) unique,
 senha VARCHAR(30),
 nivel INT,
 cpf VARCHAR(45),
@@ -27,12 +27,15 @@ idDono int references Cliente(idCliente)
 );
 
 create table agendamento(
-idFuncionario int references funcionario(idFuncionario),
-idDono int references cliente(idCliente),
-idPet int references pet(idPet),
-acao varchar(45),
-descricao varchar(45),
-data_agendamento date
+nomeDono varchar(45),
+nomeAnimal varchar(45),
+telefone varchar(45),
+animal varchar(45),
+servico varchar(45),
+hora varchar(45),
+kilos varchar(45),
+agenda varchar(45),
+cpf varchar(45) 
 );
 
 
