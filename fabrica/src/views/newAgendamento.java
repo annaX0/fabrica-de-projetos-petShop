@@ -26,6 +26,13 @@ public class newAgendamento extends javax.swing.JFrame {
     }
     private void cadNovoAgendamento(AgendamentoAnimal novoAgendamento){
     this.conectar.conectaBanco();
+    Date d = null;
+    DateFormat data = new SimpleDateFormat("dd/MM/yyyy" );
+     try{
+        d = data.parse(data.format(jCalendar.getDate()));
+    } catch(Exception e){
+           e.printStackTrace();
+       }
     novoAgendamento.setNomeDono(txt_nome_dono.getText());
     novoAgendamento.setNomeAnimal(txt_nome_animal.getText());
     novoAgendamento.setTelefone(txt_telefone.getText());
@@ -33,9 +40,8 @@ public class newAgendamento extends javax.swing.JFrame {
     novoAgendamento.setKilos((String)cmb_kilos.getSelectedItem());
     novoAgendamento.setServico((String)cmb_servico.getSelectedItem());
     novoAgendamento.setHora((String)cmb_hora.getSelectedItem());
-    novoAgendamento.setAgenda(txt_agendamento.getText());
+    novoAgendamento.setAgenda(data.format(d));
     novoAgendamento.setCpf(txt_cpf.getText());
-    
 
     //String Animal;String nomeDono;String telefone;String dia;String servico;
     
@@ -323,19 +329,7 @@ public class newAgendamento extends javax.swing.JFrame {
     }//GEN-LAST:event_btn_agendamentoActionPerformed
     
     private void btn_agendarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_agendarActionPerformed
-        DateFormat teste = new SimpleDateFormat("dd/MM/yyyy" );
         cadNovoAgendamento(novoAgendamento);
-        
-       
-       Date dl = null;
-       try{
-       dl = teste.parse(teste.format(jCalendar.getDate()));
-       } catch(Exception e){
-           e.printStackTrace();
-       }
-       
-       txt_agendamento.setText(teste.format(dl));
-        
     }//GEN-LAST:event_btn_agendarActionPerformed
 
     private void cmb_servicoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cmb_servicoActionPerformed

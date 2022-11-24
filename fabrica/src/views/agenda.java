@@ -91,9 +91,10 @@ public class agenda extends javax.swing.JFrame {
             novoAgendamento.setAnimal(txt_animal.getText());
             novoAgendamento.setServico(txt_servico.getText());
             novoAgendamento.setHora(txt_hora.getText());
-            novoAgendamento.setKilos(txt_agenda.getText());
-            novoAgendamento.setAgenda(txt_kilos.getText());
-            
+            novoAgendamento.setKilos(txt_kilos.getText());
+            novoAgendamento.setAgenda(txt_agenda.getText());
+            novoAgendamento.setCpf(txt_cpf.getText());
+
         try{
             this.conectar.updateSQL(
             " DELETE FROM agendamento"
@@ -105,6 +106,27 @@ public class agenda extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(null, "Erro ao atualizar agendamento");
             
         }finally{
+            txt_nome_dono.setText("");
+            txt_nome_animal.setText("");
+            txt_telefone.setText("");
+            txt_animal.setText("");
+            txt_servico.setText("");
+            txt_hora.setText("");
+            txt_kilos.setText("");
+            txt_agenda.setText("");
+            txt_cpf.setText("");
+            novoAgendamento.setNomeDono("");
+            novoAgendamento.setNomeAnimal("");
+            novoAgendamento.setTelefone("");
+            novoAgendamento.setAnimal("");
+            novoAgendamento.setServico("");
+            novoAgendamento.setHora("");
+            novoAgendamento.setKilos("");
+            novoAgendamento.setAgenda("");
+            novoAgendamento.setCpf("");
+
+
+
             this.conectar.fechaBanco();
             JOptionPane.showMessageDialog(null, "Agendamento atualizado!");
         }    
