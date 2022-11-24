@@ -156,11 +156,17 @@ public class atualiza extends javax.swing.JFrame {
             }
         });
         jPanel2.add(btn_atualiza);
-        btn_atualiza.setBounds(90, 430, 72, 23);
+        btn_atualiza.setBounds(90, 430, 72, 22);
         jPanel2.add(txt_nome_dono);
         txt_nome_dono.setBounds(410, 130, 110, 30);
         jPanel2.add(txt_telefone);
         txt_telefone.setBounds(410, 250, 110, 30);
+
+        txt_servico.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txt_servicoActionPerformed(evt);
+            }
+        });
         jPanel2.add(txt_servico);
         txt_servico.setBounds(410, 190, 110, 30);
 
@@ -224,7 +230,7 @@ public class atualiza extends javax.swing.JFrame {
             }
         });
         jPanel2.add(btn_pesquisa);
-        btn_pesquisa.setBounds(420, 70, 80, 23);
+        btn_pesquisa.setBounds(420, 70, 80, 22);
         jPanel2.add(txt_kilos);
         txt_kilos.setBounds(410, 310, 110, 30);
 
@@ -368,6 +374,10 @@ public class atualiza extends javax.swing.JFrame {
         agendament.setVisible(true);
         dispose();
     }//GEN-LAST:event_btn_agendamentoActionPerformed
+
+    private void txt_servicoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txt_servicoActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txt_servicoActionPerformed
 
     /**
      * @param args the command line arguments

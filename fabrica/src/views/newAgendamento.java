@@ -105,6 +105,7 @@ public class newAgendamento extends javax.swing.JFrame {
         txt_agendamento = new javax.swing.JTextField();
         jLabel12 = new javax.swing.JLabel();
         txt_cpf = new javax.swing.JTextField();
+        jLabel_Nome_Dono1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setMinimumSize(new java.awt.Dimension(767, 540));
@@ -152,16 +153,16 @@ public class newAgendamento extends javax.swing.JFrame {
         btn_agendamento.setBounds(0, 140, 220, 48);
 
         getContentPane().add(jPanel1);
-        jPanel1.setBounds(0, 0, 220, 520);
+        jPanel1.setBounds(0, 0, 220, 600);
 
         jPanel2.setBackground(new java.awt.Color(0, 63, 89));
         jPanel2.setLayout(null);
 
         jLabel2.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel2.setText("Telefone");
+        jLabel2.setText("Telefone:");
         jPanel2.add(jLabel2);
-        jLabel2.setBounds(10, 90, 61, 20);
+        jLabel2.setBounds(40, 170, 70, 20);
 
         btn_agendar.setBackground(new java.awt.Color(240, 140, 23));
         btn_agendar.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
@@ -173,15 +174,15 @@ public class newAgendamento extends javax.swing.JFrame {
             }
         });
         jPanel2.add(btn_agendar);
-        btn_agendar.setBounds(200, 450, 140, 40);
+        btn_agendar.setBounds(190, 480, 220, 40);
 
         jLabel_Servico.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         jLabel_Servico.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel_Servico.setText("Serviço");
+        jLabel_Servico.setText("Serviço:");
         jPanel2.add(jLabel_Servico);
-        jLabel_Servico.setBounds(420, 160, 61, 20);
+        jLabel_Servico.setBounds(170, 380, 61, 20);
         jPanel2.add(txt_nome_dono);
-        txt_nome_dono.setBounds(10, 50, 240, 30);
+        txt_nome_dono.setBounds(40, 50, 240, 30);
 
         txt_telefone.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -189,19 +190,19 @@ public class newAgendamento extends javax.swing.JFrame {
             }
         });
         jPanel2.add(txt_telefone);
-        txt_telefone.setBounds(10, 120, 240, 30);
+        txt_telefone.setBounds(40, 190, 240, 30);
 
         jLabel_Animal.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         jLabel_Animal.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel_Animal.setText("Animal");
+        jLabel_Animal.setText("Animal:");
         jPanel2.add(jLabel_Animal);
-        jLabel_Animal.setBounds(280, 90, 61, 20);
+        jLabel_Animal.setBounds(170, 310, 61, 20);
 
         jLabel_Nome_Dono.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         jLabel_Nome_Dono.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel_Nome_Dono.setText("Kilos");
+        jLabel_Nome_Dono.setText("Horário:");
         jPanel2.add(jLabel_Nome_Dono);
-        jLabel_Nome_Dono.setBounds(420, 90, 100, 20);
+        jLabel_Nome_Dono.setBounds(310, 230, 110, 20);
 
         cmb_animal.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Gato", "Cachorro" }));
         cmb_animal.setFocusable(false);
@@ -214,15 +215,21 @@ public class newAgendamento extends javax.swing.JFrame {
             }
         });
         jPanel2.add(cmb_animal);
-        cmb_animal.setBounds(280, 120, 110, 30);
+        cmb_animal.setBounds(170, 330, 110, 30);
 
         jLabel_Nome_Animal.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         jLabel_Nome_Animal.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel_Nome_Animal.setText("Nome Animal");
+        jLabel_Nome_Animal.setText("Nome Animal:");
         jPanel2.add(jLabel_Nome_Animal);
-        jLabel_Nome_Animal.setBounds(280, 20, 100, 20);
+        jLabel_Nome_Animal.setBounds(40, 240, 100, 20);
+
+        txt_nome_animal.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txt_nome_animalActionPerformed(evt);
+            }
+        });
         jPanel2.add(txt_nome_animal);
-        txt_nome_animal.setBounds(280, 50, 240, 30);
+        txt_nome_animal.setBounds(40, 260, 240, 30);
 
         cmb_servico.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Banho", "Tosa", "Banho & Tosa" }));
         cmb_servico.setFocusable(false);
@@ -235,13 +242,13 @@ public class newAgendamento extends javax.swing.JFrame {
             }
         });
         jPanel2.add(cmb_servico);
-        cmb_servico.setBounds(420, 190, 110, 30);
+        cmb_servico.setBounds(170, 400, 110, 30);
 
         jLabel11.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         jLabel11.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel11.setText("CPF");
+        jLabel11.setText("CPF:");
         jPanel2.add(jLabel11);
-        jLabel11.setBounds(20, 380, 61, 20);
+        jLabel11.setBounds(40, 100, 61, 20);
 
         cmb_hora.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "8:00", "9:00", "10:00", "11:00", "13:00", "14:00", "15:00", "16:00" }));
         cmb_hora.setFocusable(false);
@@ -254,13 +261,13 @@ public class newAgendamento extends javax.swing.JFrame {
             }
         });
         jPanel2.add(cmb_hora);
-        cmb_hora.setBounds(420, 270, 110, 30);
+        cmb_hora.setBounds(40, 400, 110, 30);
 
         jLabel_Hora.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         jLabel_Hora.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel_Hora.setText("Hora");
+        jLabel_Hora.setText("Horário:");
         jPanel2.add(jLabel_Hora);
-        jLabel_Hora.setBounds(420, 240, 61, 20);
+        jLabel_Hora.setBounds(40, 380, 61, 20);
 
         cmb_kilos.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "0-5 KG", "5-10 KG", "10-15 KG", "15-20 KG", "20-25 KG", "25-30 KG", "30+" }));
         cmb_kilos.setFocusable(false);
@@ -273,9 +280,9 @@ public class newAgendamento extends javax.swing.JFrame {
             }
         });
         jPanel2.add(cmb_kilos);
-        cmb_kilos.setBounds(420, 120, 110, 30);
+        cmb_kilos.setBounds(40, 330, 110, 30);
         jPanel2.add(jCalendar);
-        jCalendar.setBounds(10, 160, 400, 210);
+        jCalendar.setBounds(310, 50, 280, 170);
 
         txt_agendamento.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -283,18 +290,24 @@ public class newAgendamento extends javax.swing.JFrame {
             }
         });
         jPanel2.add(txt_agendamento);
-        txt_agendamento.setBounds(420, 330, 110, 30);
+        txt_agendamento.setBounds(310, 250, 110, 30);
 
         jLabel12.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         jLabel12.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel12.setText("Nome");
+        jLabel12.setText("Nome:");
         jPanel2.add(jLabel12);
-        jLabel12.setBounds(10, 20, 61, 20);
+        jLabel12.setBounds(40, 30, 61, 20);
         jPanel2.add(txt_cpf);
-        txt_cpf.setBounds(10, 400, 240, 30);
+        txt_cpf.setBounds(40, 120, 240, 30);
+
+        jLabel_Nome_Dono1.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        jLabel_Nome_Dono1.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel_Nome_Dono1.setText("Peso do Animal:");
+        jPanel2.add(jLabel_Nome_Dono1);
+        jLabel_Nome_Dono1.setBounds(40, 310, 130, 20);
 
         getContentPane().add(jPanel2);
-        jPanel2.setBounds(220, 0, 560, 520);
+        jPanel2.setBounds(220, 0, 630, 590);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -349,6 +362,10 @@ public class newAgendamento extends javax.swing.JFrame {
         
     }//GEN-LAST:event_txt_agendamentoActionPerformed
 
+    private void txt_nome_animalActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txt_nome_animalActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txt_nome_animalActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -402,6 +419,7 @@ public class newAgendamento extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel_Hora;
     private javax.swing.JLabel jLabel_Nome_Animal;
     private javax.swing.JLabel jLabel_Nome_Dono;
+    private javax.swing.JLabel jLabel_Nome_Dono1;
     private javax.swing.JLabel jLabel_Servico;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
