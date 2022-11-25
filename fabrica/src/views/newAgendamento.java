@@ -42,6 +42,7 @@ public class newAgendamento extends javax.swing.JFrame {
     novoAgendamento.setHora((String)cmb_hora.getSelectedItem());
     novoAgendamento.setAgenda(data.format(d));
     novoAgendamento.setCpf(txt_cpf.getText());
+    txt_agendamento.setText(novoAgendamento.getAgenda());
 
     //String Animal;String nomeDono;String telefone;String dia;String servico;
     
@@ -96,7 +97,6 @@ public class newAgendamento extends javax.swing.JFrame {
         btn_agendar = new javax.swing.JButton();
         jLabel_Servico = new javax.swing.JLabel();
         txt_nome_dono = new javax.swing.JTextField();
-        txt_telefone = new javax.swing.JTextField();
         jLabel_Animal = new javax.swing.JLabel();
         jLabel_Nome_Dono = new javax.swing.JLabel();
         cmb_animal = new javax.swing.JComboBox<>();
@@ -110,8 +110,9 @@ public class newAgendamento extends javax.swing.JFrame {
         jCalendar = new com.toedter.calendar.JCalendar();
         txt_agendamento = new javax.swing.JTextField();
         jLabel12 = new javax.swing.JLabel();
-        txt_cpf = new javax.swing.JTextField();
         jLabel_Nome_Dono1 = new javax.swing.JLabel();
+        txt_cpf = new javax.swing.JFormattedTextField();
+        txt_telefone = new javax.swing.JFormattedTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setMinimumSize(new java.awt.Dimension(1039, 593));
@@ -189,14 +190,6 @@ public class newAgendamento extends javax.swing.JFrame {
         jLabel_Servico.setBounds(170, 380, 61, 20);
         jPanel2.add(txt_nome_dono);
         txt_nome_dono.setBounds(40, 50, 240, 30);
-
-        txt_telefone.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txt_telefoneActionPerformed(evt);
-            }
-        });
-        jPanel2.add(txt_telefone);
-        txt_telefone.setBounds(40, 190, 240, 30);
 
         jLabel_Animal.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         jLabel_Animal.setForeground(new java.awt.Color(255, 255, 255));
@@ -304,14 +297,28 @@ public class newAgendamento extends javax.swing.JFrame {
         jLabel12.setText("Nome:");
         jPanel2.add(jLabel12);
         jLabel12.setBounds(40, 30, 61, 20);
-        jPanel2.add(txt_cpf);
-        txt_cpf.setBounds(40, 120, 240, 30);
 
         jLabel_Nome_Dono1.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         jLabel_Nome_Dono1.setForeground(new java.awt.Color(255, 255, 255));
         jLabel_Nome_Dono1.setText("Peso do Animal:");
         jPanel2.add(jLabel_Nome_Dono1);
         jLabel_Nome_Dono1.setBounds(40, 310, 130, 20);
+
+        try {
+            txt_cpf.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("###.###.###-##")));
+        } catch (java.text.ParseException ex) {
+            ex.printStackTrace();
+        }
+        jPanel2.add(txt_cpf);
+        txt_cpf.setBounds(40, 130, 240, 30);
+
+        try {
+            txt_telefone.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("(##)#####-####")));
+        } catch (java.text.ParseException ex) {
+            ex.printStackTrace();
+        }
+        jPanel2.add(txt_telefone);
+        txt_telefone.setBounds(40, 200, 240, 30);
 
         getContentPane().add(jPanel2);
         jPanel2.setBounds(220, 0, 820, 590);
@@ -348,10 +355,6 @@ public class newAgendamento extends javax.swing.JFrame {
     private void cmb_kilosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cmb_kilosActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_cmb_kilosActionPerformed
-
-    private void txt_telefoneActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txt_telefoneActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txt_telefoneActionPerformed
 
     private void txt_nome_animalActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txt_nome_animalActionPerformed
         // TODO add your handling code here:
@@ -419,10 +422,10 @@ public class newAgendamento extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JTextField txt_agendamento;
-    private javax.swing.JTextField txt_cpf;
+    private javax.swing.JFormattedTextField txt_cpf;
     private javax.swing.JTextField txt_nome_animal;
     private javax.swing.JTextField txt_nome_dono;
-    private javax.swing.JTextField txt_telefone;
+    private javax.swing.JFormattedTextField txt_telefone;
     // End of variables declaration//GEN-END:variables
 
     

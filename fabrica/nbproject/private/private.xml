@@ -3,8 +3,10 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/D:/projetos/fabrica-de-projetos-petShop/fabrica/src/views/atualizar.java</file>
-            <file>file:/D:/projetos/fabrica-de-projetos-petShop/fabrica/src/views/buscar.java</file>
+            <file>file:/D:/projetos/fabrica-de-projetos-petShop/fabrica/src/views/newAgendamento.java</file>
+            <file>file:/D:/projetos/fabrica-de-projetos-petShop/fabrica/src/views/agenda.java</file>
+            <file>file:/D:/projetos/fabrica-de-projetos-petShop/fabrica/src/views/newAccount.java</file>
+            <file>file:/D:/projetos/fabrica-de-projetos-petShop/fabrica/src/connections/MySQL.java</file>
         </group>
     </open-files>
 </project-private>
