@@ -130,6 +130,43 @@ public class agenda extends javax.swing.JFrame {
         }    
 
     }
+    
+    private void atualizaAgendamento(AgendamentoAnimal novoAgendamento ){
+        this.conectar.conectaBanco();
+
+        String pesquisaNewAgendamento = this.txt_cpf.getText();
+        
+            novoAgendamento.setNomeDono(txt_nome_dono.getText());
+            novoAgendamento.setTelefone(txt_telefone.getText());
+            novoAgendamento.setServico((String)txt_servico.getSelectedItem());
+            novoAgendamento.setHora((String)cmb_hora.getSelectedItem());
+            novoAgendamento.setKilos((String)txt_kilos.getSelectedItem());
+            novoAgendamento.setAgenda(txt_agenda.getText());
+            
+        try{
+            this.conectar.updateSQL(
+            " UPDATE agendamento SET "
+            + " nomeDono = '" + novoAgendamento.getNomeDono()+"'"
+            + ", telefone = '" + novoAgendamento.getTelefone()+"'"
+            + ", servico = '" + novoAgendamento.getServico()+"'"
+            + ", hora = '" + novoAgendamento.getHora()+"'"
+            + ", kilos = '" + novoAgendamento.getKilos()+"'"
+            + ", agenda = '" + novoAgendamento.getAgenda()+"'"
+            + ", cpf = '" + novoAgendamento.getCpf()+"'"
+            + " WHERE"
+            + " cpf = '"+ pesquisaNewAgendamento + "'" + ";"
+            );
+        }catch(Exception e){
+            System.out.println("Erro ao atualizar agendamento" + e.getMessage());
+            JOptionPane.showMessageDialog(null, "Erro ao atualizar agendamento");
+            
+        }finally{
+            this.conectar.fechaBanco();
+            JOptionPane.showMessageDialog(null, "Agendamento atualizado!");
+        }    
+
+    }
+    
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
@@ -361,7 +398,17 @@ public class agenda extends javax.swing.JFrame {
     }//GEN-LAST:event_btn_agendamentoActionPerformed
 
     private void btn_alteraActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_alteraActionPerformed
-        
+        DateFormat teste = new SimpleDateFormat("dd/MM/yyyy" );
+        atualizaAgendamento(novoAgendamento);
+
+        Date dl = null;
+        try{
+            dl = teste.parse(teste.format(jCalendar1.getDate()));
+        } catch(Exception e){
+            e.printStackTrace();
+        }
+
+        txt_agenda.setText(teste.format(dl));        
     }//GEN-LAST:event_btn_alteraActionPerformed
 
     private void btn_deletaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_deletaActionPerformed
