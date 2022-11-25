@@ -29,7 +29,7 @@ public class agenda extends javax.swing.JFrame {
     this.conectar.conectaBanco();
         
         String pesquisaNewAgendamento = txt_cpf.getText();
-        Date d = null;
+        
         
         try{
         this.conectar.executarSQL("SELECT "
@@ -46,6 +46,7 @@ public class agenda extends javax.swing.JFrame {
             + " agendamento"
             + " WHERE"
             + " cpf = '" + pesquisaNewAgendamento + "'" + ";"
+                
         );
         while (this.conectar.getResultSet().next()){
             novoAgendamento.setNomeDono(this.conectar.getResultSet().getString(1));
@@ -57,14 +58,17 @@ public class agenda extends javax.swing.JFrame {
             novoAgendamento.setKilos(this.conectar.getResultSet().getString(7));
             novoAgendamento.setAgenda(this.conectar.getResultSet().getString(8));
             novoAgendamento.setCpf(this.conectar.getResultSet().getString(9));
-
+            
         }
-        
-        } catch (Exception e){
-            System.out.println("Erro ao consultar funcionario" + e.getMessage());
+         
+       if(novoAgendamento.getCpf()==null)
             JOptionPane.showMessageDialog(null, "Erro ao buscar funcionário!");
+        } catch (Exception e){
+            
+            
             
         } finally{
+            
             txt_nome_dono.setText(novoAgendamento.getNomeDono());
             txt_nome_animal.setText(novoAgendamento.getNomeAnimal());
             txt_telefone.setText(novoAgendamento.getTelefone());
@@ -74,20 +78,16 @@ public class agenda extends javax.swing.JFrame {
             txt_kilos.setSelectedItem(novoAgendamento.getKilos());
             txt_agenda.setText(novoAgendamento.getAgenda());
             txt_cpf.setText(novoAgendamento.getCpf());
-        
-            
-                try{   
-                    d = new SimpleDateFormat("dd/MM/yyyy").parse(novoAgendamento.getAgenda());
-                } catch(Exception e){
-                    e.printStackTrace();
-                }
-                 jCalendar1.setDate(d);
-            
+
             this.conectar.fechaBanco();
+            
                 
-        }
+        } 
 
     }
+    
+        
+                  
 
     private void deletaAgendamento(AgendamentoAnimal novoAgendamento ){
         this.conectar.conectaBanco();
@@ -110,8 +110,7 @@ public class agenda extends javax.swing.JFrame {
             + " cpf = '" + pesquisaNewAgendamento + "'"
             );
         }catch(Exception e){
-            System.out.println("Erro ao atualizar agendamento" + e.getMessage());
-            JOptionPane.showMessageDialog(null, "Erro ao atualizar agendamento");
+            
             
         }finally{
             txt_nome_dono.setText("");
@@ -135,7 +134,7 @@ public class agenda extends javax.swing.JFrame {
 
 
             this.conectar.fechaBanco();
-            JOptionPane.showMessageDialog(null, "Agendamento atualizado!");
+            JOptionPane.showMessageDialog(null, "Agendamento e Usuario Deletado!");
         }    
 
     }
@@ -455,6 +454,8 @@ public class agenda extends javax.swing.JFrame {
 
     private void btn_pesquisaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_pesquisaActionPerformed
         pesquisaNewAgendamento(novoAgendamento);
+         if(novoAgendamento.getCpf()=="")
+            JOptionPane.showMessageDialog(null, "Erro ao buscar funcionário!");
     }//GEN-LAST:event_btn_pesquisaActionPerformed
 
     private void txt_agendaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txt_agendaActionPerformed

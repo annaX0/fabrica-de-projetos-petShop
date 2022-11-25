@@ -70,10 +70,10 @@ public class newAgendamento extends javax.swing.JFrame {
     + ");");
      } catch (Exception e){
             System.err.println("Erro ao cadastrar Usuario" + e.getMessage());
-            JOptionPane.showMessageDialog(null, "Erro ao cadastrar Usuario");
+            JOptionPane.showMessageDialog(null, "Erro ao cadastrar agendamento");
         } finally{
             this.conectar.fechaBanco();
-            JOptionPane.showMessageDialog(null, "Usuario cadastrado com sucesso");
+            JOptionPane.showMessageDialog(null, "Usuario agendado com sucesso");
         }
 
     }
