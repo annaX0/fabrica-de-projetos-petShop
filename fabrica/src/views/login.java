@@ -123,7 +123,7 @@ public class login extends javax.swing.JFrame {
         );
 
         getContentPane().add(panel1);
-        panel1.setBounds(0, 0, 370, 640);
+        panel1.setBounds(-10, 0, 370, 640);
 
         panel2.setBackground(new java.awt.Color(250, 250, 250));
         panel2.setForeground(new java.awt.Color(0, 25, 35));
@@ -225,7 +225,7 @@ public class login extends javax.swing.JFrame {
         label5.setBounds(339, 60, 127, 68);
 
         getContentPane().add(panel2);
-        panel2.setBounds(370, 10, 770, 640);
+        panel2.setBounds(360, 0, 780, 640);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents

@@ -114,7 +114,7 @@ public class newAgendamento extends javax.swing.JFrame {
         jLabel_Nome_Dono1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setMinimumSize(new java.awt.Dimension(767, 540));
+        setMinimumSize(new java.awt.Dimension(1039, 593));
         getContentPane().setLayout(null);
 
         jPanel1.setBackground(new java.awt.Color(240, 140, 23));
@@ -206,9 +206,9 @@ public class newAgendamento extends javax.swing.JFrame {
 
         jLabel_Nome_Dono.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         jLabel_Nome_Dono.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel_Nome_Dono.setText("Horário:");
+        jLabel_Nome_Dono.setText("Data:");
         jPanel2.add(jLabel_Nome_Dono);
-        jLabel_Nome_Dono.setBounds(310, 230, 110, 20);
+        jLabel_Nome_Dono.setBounds(320, 270, 110, 20);
 
         cmb_animal.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Gato", "Cachorro" }));
         cmb_animal.setFocusable(false);
@@ -288,15 +288,16 @@ public class newAgendamento extends javax.swing.JFrame {
         jPanel2.add(cmb_kilos);
         cmb_kilos.setBounds(40, 330, 110, 30);
         jPanel2.add(jCalendar);
-        jCalendar.setBounds(310, 50, 280, 170);
+        jCalendar.setBounds(320, 50, 450, 210);
 
+        txt_agendamento.setEnabled(false);
         txt_agendamento.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txt_agendamentoActionPerformed(evt);
             }
         });
         jPanel2.add(txt_agendamento);
-        txt_agendamento.setBounds(310, 250, 110, 30);
+        txt_agendamento.setBounds(320, 290, 110, 30);
 
         jLabel12.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         jLabel12.setForeground(new java.awt.Color(255, 255, 255));
@@ -313,7 +314,7 @@ public class newAgendamento extends javax.swing.JFrame {
         jLabel_Nome_Dono1.setBounds(40, 310, 130, 20);
 
         getContentPane().add(jPanel2);
-        jPanel2.setBounds(220, 0, 630, 590);
+        jPanel2.setBounds(220, 0, 820, 590);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -352,13 +353,13 @@ public class newAgendamento extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_txt_telefoneActionPerformed
 
-    private void txt_agendamentoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txt_agendamentoActionPerformed
-        
-    }//GEN-LAST:event_txt_agendamentoActionPerformed
-
     private void txt_nome_animalActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txt_nome_animalActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_txt_nome_animalActionPerformed
+
+    private void txt_agendamentoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txt_agendamentoActionPerformed
+
+    }//GEN-LAST:event_txt_agendamentoActionPerformed
 
     /**
      * @param args the command line arguments

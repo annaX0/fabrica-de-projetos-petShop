@@ -67,10 +67,10 @@ public class agenda extends javax.swing.JFrame {
             txt_nome_dono.setText(novoAgendamento.getNomeDono());
             txt_nome_animal.setText(novoAgendamento.getNomeAnimal());
             txt_telefone.setText(novoAgendamento.getTelefone());
-            txt_animal.setText(novoAgendamento.getAnimal());
-            txt_servico.setText(novoAgendamento.getServico());
-            txt_hora.setText(novoAgendamento.getHora());
-            txt_kilos.setText(novoAgendamento.getKilos());
+            txt_animal.setSelectedItem(novoAgendamento.getAnimal());
+            txt_servico.setSelectedItem(novoAgendamento.getServico());
+            cmb_hora.setSelectedItem(novoAgendamento.getHora());
+            txt_kilos.setSelectedItem(novoAgendamento.getKilos());
             txt_agenda.setText(novoAgendamento.getAgenda());
             txt_cpf.setText(novoAgendamento.getCpf());
 
@@ -88,10 +88,9 @@ public class agenda extends javax.swing.JFrame {
             novoAgendamento.setNomeDono(txt_nome_dono.getText());
             novoAgendamento.setNomeAnimal(txt_nome_animal.getText());
             novoAgendamento.setTelefone(txt_telefone.getText());
-            novoAgendamento.setAnimal(txt_animal.getText());
-            novoAgendamento.setServico(txt_servico.getText());
-            novoAgendamento.setHora(txt_hora.getText());
-            novoAgendamento.setKilos(txt_kilos.getText());
+            novoAgendamento.setAnimal((String)txt_animal.getSelectedItem());
+            novoAgendamento.setServico((String)txt_servico.getSelectedItem());
+            novoAgendamento.setKilos((String) txt_kilos.getSelectedItem());
             novoAgendamento.setAgenda(txt_agenda.getText());
             novoAgendamento.setCpf(txt_cpf.getText());
 
@@ -109,10 +108,9 @@ public class agenda extends javax.swing.JFrame {
             txt_nome_dono.setText("");
             txt_nome_animal.setText("");
             txt_telefone.setText("");
-            txt_animal.setText("");
-            txt_servico.setText("");
-            txt_hora.setText("");
-            txt_kilos.setText("");
+            txt_animal.setSelectedItem("");
+            txt_servico.setSelectedItem("");
+            txt_kilos.setSelectedItem("");
             txt_agenda.setText("");
             txt_cpf.setText("");
             novoAgendamento.setNomeDono("");
@@ -140,32 +138,31 @@ public class agenda extends javax.swing.JFrame {
         btn_agendamento = new javax.swing.JButton();
         btn_agenda1 = new javax.swing.JButton();
         jPanel2 = new javax.swing.JPanel();
-        btn_pesquisa = new javax.swing.JButton();
+        btn_altera = new javax.swing.JButton();
         btn_deleta = new javax.swing.JButton();
         txt_nome_animal = new javax.swing.JTextField();
         txt_nome_dono = new javax.swing.JTextField();
         txt_telefone = new javax.swing.JTextField();
-        txt_servico = new javax.swing.JTextField();
-        txt_hora = new javax.swing.JTextField();
-        txt_animal = new javax.swing.JTextField();
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
-        jLabel5 = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
         jLabel7 = new javax.swing.JLabel();
         jLabel8 = new javax.swing.JLabel();
-        txt_kilos = new javax.swing.JTextField();
         txt_agenda = new javax.swing.JTextField();
         jLabel9 = new javax.swing.JLabel();
         txt_cpf = new javax.swing.JTextField();
         jLabel10 = new javax.swing.JLabel();
         cmb_hora = new javax.swing.JComboBox<>();
-        jCalendar2 = new com.toedter.calendar.JCalendar();
         jLabel11 = new javax.swing.JLabel();
+        jCalendar1 = new com.toedter.calendar.JCalendar();
+        btn_pesquisa = new javax.swing.JButton();
+        txt_kilos = new javax.swing.JComboBox<>();
+        txt_animal = new javax.swing.JComboBox<>();
+        txt_servico = new javax.swing.JComboBox<>();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setMinimumSize(new java.awt.Dimension(776, 540));
+        setMinimumSize(new java.awt.Dimension(984, 618));
         getContentPane().setLayout(null);
 
         jPanel1.setBackground(new java.awt.Color(240, 140, 23));
@@ -210,24 +207,25 @@ public class agenda extends javax.swing.JFrame {
         btn_agenda1.setBounds(0, 190, 220, 48);
 
         getContentPane().add(jPanel1);
-        jPanel1.setBounds(0, 0, 220, 540);
+        jPanel1.setBounds(0, 0, 220, 620);
 
         jPanel2.setBackground(new java.awt.Color(0, 63, 89));
+        jPanel2.setMinimumSize(new java.awt.Dimension(870, 620));
         jPanel2.setLayout(null);
 
-        btn_pesquisa.setBackground(new java.awt.Color(240, 140, 23));
-        btn_pesquisa.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        btn_pesquisa.setForeground(new java.awt.Color(255, 255, 255));
-        btn_pesquisa.setText("Pesquisar");
-        btn_pesquisa.addActionListener(new java.awt.event.ActionListener() {
+        btn_altera.setBackground(new java.awt.Color(0, 102, 0));
+        btn_altera.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        btn_altera.setForeground(new java.awt.Color(255, 255, 255));
+        btn_altera.setText("Alterar");
+        btn_altera.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btn_pesquisaActionPerformed(evt);
+                btn_alteraActionPerformed(evt);
             }
         });
-        jPanel2.add(btn_pesquisa);
-        btn_pesquisa.setBounds(190, 440, 130, 40);
+        jPanel2.add(btn_altera);
+        btn_altera.setBounds(190, 480, 130, 40);
 
-        btn_deleta.setBackground(new java.awt.Color(240, 140, 23));
+        btn_deleta.setBackground(new java.awt.Color(255, 51, 51));
         btn_deleta.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         btn_deleta.setForeground(new java.awt.Color(255, 255, 255));
         btn_deleta.setText("Apagar");
@@ -237,19 +235,13 @@ public class agenda extends javax.swing.JFrame {
             }
         });
         jPanel2.add(btn_deleta);
-        btn_deleta.setBounds(40, 440, 130, 40);
+        btn_deleta.setBounds(340, 480, 130, 40);
         jPanel2.add(txt_nome_animal);
         txt_nome_animal.setBounds(160, 310, 110, 30);
         jPanel2.add(txt_nome_dono);
         txt_nome_dono.setBounds(40, 70, 230, 30);
         jPanel2.add(txt_telefone);
         txt_telefone.setBounds(40, 250, 230, 30);
-        jPanel2.add(txt_servico);
-        txt_servico.setBounds(160, 190, 110, 30);
-        jPanel2.add(txt_hora);
-        txt_hora.setBounds(40, 190, 110, 30);
-        jPanel2.add(txt_animal);
-        txt_animal.setBounds(40, 370, 230, 30);
 
         jLabel2.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(255, 255, 255));
@@ -267,13 +259,7 @@ public class agenda extends javax.swing.JFrame {
         jLabel4.setForeground(new java.awt.Color(255, 255, 255));
         jLabel4.setText("Serviço:");
         jPanel2.add(jLabel4);
-        jLabel4.setBounds(160, 170, 80, 16);
-
-        jLabel5.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-        jLabel5.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel5.setText("Horario:");
-        jPanel2.add(jLabel5);
-        jLabel5.setBounds(40, 170, 50, 16);
+        jLabel4.setBounds(40, 170, 80, 16);
 
         jLabel6.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         jLabel6.setForeground(new java.awt.Color(255, 255, 255));
@@ -292,16 +278,16 @@ public class agenda extends javax.swing.JFrame {
         jLabel8.setText("Peso do animal:");
         jPanel2.add(jLabel8);
         jLabel8.setBounds(40, 290, 100, 16);
-        jPanel2.add(txt_kilos);
-        txt_kilos.setBounds(40, 310, 110, 30);
+
+        txt_agenda.setEnabled(false);
         jPanel2.add(txt_agenda);
-        txt_agenda.setBounds(290, 260, 120, 30);
+        txt_agenda.setBounds(300, 310, 200, 30);
 
         jLabel9.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         jLabel9.setForeground(new java.awt.Color(255, 255, 255));
         jLabel9.setText("Horário");
         jPanel2.add(jLabel9);
-        jLabel9.setBounds(430, 240, 80, 16);
+        jLabel9.setBounds(520, 290, 160, 16);
 
         txt_cpf.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -328,18 +314,42 @@ public class agenda extends javax.swing.JFrame {
             }
         });
         jPanel2.add(cmb_hora);
-        cmb_hora.setBounds(430, 260, 120, 30);
-        jPanel2.add(jCalendar2);
-        jCalendar2.setBounds(290, 70, 260, 160);
+        cmb_hora.setBounds(520, 310, 200, 30);
 
         jLabel11.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         jLabel11.setForeground(new java.awt.Color(255, 255, 255));
         jLabel11.setText("Data:");
         jPanel2.add(jLabel11);
-        jLabel11.setBounds(290, 240, 80, 16);
+        jLabel11.setBounds(300, 290, 160, 16);
+        jPanel2.add(jCalendar1);
+        jCalendar1.setBounds(300, 70, 420, 210);
+
+        btn_pesquisa.setBackground(new java.awt.Color(240, 140, 23));
+        btn_pesquisa.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        btn_pesquisa.setForeground(new java.awt.Color(255, 255, 255));
+        btn_pesquisa.setText("Pesquisar");
+        btn_pesquisa.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_pesquisaActionPerformed(evt);
+            }
+        });
+        jPanel2.add(btn_pesquisa);
+        btn_pesquisa.setBounds(40, 480, 130, 40);
+
+        txt_kilos.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "0-5 KG", "5-10 KG", "10-15 KG", "15-20 KG", "20-25 KG", "25-30 KG", "30+" }));
+        jPanel2.add(txt_kilos);
+        txt_kilos.setBounds(40, 310, 100, 30);
+
+        txt_animal.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Gato", "Cachorro" }));
+        jPanel2.add(txt_animal);
+        txt_animal.setBounds(40, 370, 230, 30);
+
+        txt_servico.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Banho", "Tosa", "Banho & Tosa" }));
+        jPanel2.add(txt_servico);
+        txt_servico.setBounds(40, 190, 230, 30);
 
         getContentPane().add(jPanel2);
-        jPanel2.setBounds(220, 0, 580, 540);
+        jPanel2.setBounds(220, 0, 770, 620);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -350,9 +360,9 @@ public class agenda extends javax.swing.JFrame {
        dispose();
     }//GEN-LAST:event_btn_agendamentoActionPerformed
 
-    private void btn_pesquisaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_pesquisaActionPerformed
-         pesquisaNewAgendamento(novoAgendamento);
-    }//GEN-LAST:event_btn_pesquisaActionPerformed
+    private void btn_alteraActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_alteraActionPerformed
+        
+    }//GEN-LAST:event_btn_alteraActionPerformed
 
     private void btn_deletaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_deletaActionPerformed
         deletaAgendamento(novoAgendamento);
@@ -369,6 +379,10 @@ public class agenda extends javax.swing.JFrame {
     private void btn_agenda1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_agenda1ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_btn_agenda1ActionPerformed
+
+    private void btn_pesquisaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_pesquisaActionPerformed
+        pesquisaNewAgendamento(novoAgendamento);
+    }//GEN-LAST:event_btn_pesquisaActionPerformed
 
     /**
      * @param args the command line arguments
@@ -408,17 +422,17 @@ public class agenda extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btn_agenda1;
     private javax.swing.JButton btn_agendamento;
+    private javax.swing.JButton btn_altera;
     private javax.swing.JButton btn_deleta;
     private javax.swing.JButton btn_pesquisa;
     private javax.swing.JComboBox<String> cmb_hora;
-    private com.toedter.calendar.JCalendar jCalendar2;
+    private com.toedter.calendar.JCalendar jCalendar1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
-    private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
@@ -426,13 +440,12 @@ public class agenda extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JTextField txt_agenda;
-    private javax.swing.JTextField txt_animal;
+    private javax.swing.JComboBox<String> txt_animal;
     private javax.swing.JTextField txt_cpf;
-    private javax.swing.JTextField txt_hora;
-    private javax.swing.JTextField txt_kilos;
+    private javax.swing.JComboBox<String> txt_kilos;
     private javax.swing.JTextField txt_nome_animal;
     private javax.swing.JTextField txt_nome_dono;
-    private javax.swing.JTextField txt_servico;
+    private javax.swing.JComboBox<String> txt_servico;
     private javax.swing.JTextField txt_telefone;
     // End of variables declaration//GEN-END:variables
 
