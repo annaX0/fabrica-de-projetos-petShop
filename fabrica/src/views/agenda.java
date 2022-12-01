@@ -190,6 +190,7 @@ public class agenda extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
         btn_agendamento = new javax.swing.JButton();
         btn_agenda1 = new javax.swing.JButton();
+        btn_agenda2 = new javax.swing.JButton();
         jPanel2 = new javax.swing.JPanel();
         btn_altera = new javax.swing.JButton();
         btn_deleta = new javax.swing.JButton();
@@ -206,13 +207,13 @@ public class agenda extends javax.swing.JFrame {
         jLabel10 = new javax.swing.JLabel();
         cmb_hora = new javax.swing.JComboBox<>();
         jLabel11 = new javax.swing.JLabel();
-        jCalendar1 = new com.toedter.calendar.JCalendar();
         btn_pesquisa = new javax.swing.JButton();
         txt_kilos = new javax.swing.JComboBox<>();
         txt_animal = new javax.swing.JComboBox<>();
         txt_servico = new javax.swing.JComboBox<>();
         txt_telefone = new javax.swing.JFormattedTextField();
         txt_cpf = new javax.swing.JFormattedTextField();
+        jCalendar1 = new com.toedter.calendar.JCalendar();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setMinimumSize(new java.awt.Dimension(984, 618));
@@ -229,9 +230,9 @@ public class agenda extends javax.swing.JFrame {
         jLabel1.setBounds(0, 70, 220, 30);
 
         btn_agendamento.setBackground(new java.awt.Color(231, 168, 95));
-        btn_agendamento.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        btn_agendamento.setFont(new java.awt.Font("Segoe UI", 1, 17)); // NOI18N
         btn_agendamento.setForeground(new java.awt.Color(255, 255, 255));
-        btn_agendamento.setText("AGENDAMENTO");
+        btn_agendamento.setText("NOVO AGENDAMENTO");
         btn_agendamento.setBorder(null);
         btn_agendamento.setBorderPainted(false);
         btn_agendamento.setFocusPainted(false);
@@ -245,9 +246,9 @@ public class agenda extends javax.swing.JFrame {
         btn_agendamento.setBounds(0, 140, 220, 48);
 
         btn_agenda1.setBackground(new java.awt.Color(231, 168, 95));
-        btn_agenda1.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        btn_agenda1.setFont(new java.awt.Font("Segoe UI", 1, 17)); // NOI18N
         btn_agenda1.setForeground(new java.awt.Color(255, 255, 255));
-        btn_agenda1.setText("AGENDA");
+        btn_agenda1.setText("EDITAR AGENDAMENTO");
         btn_agenda1.setBorder(null);
         btn_agenda1.setRequestFocusEnabled(false);
         btn_agenda1.setRolloverEnabled(false);
@@ -258,6 +259,21 @@ public class agenda extends javax.swing.JFrame {
         });
         jPanel1.add(btn_agenda1);
         btn_agenda1.setBounds(0, 190, 220, 48);
+
+        btn_agenda2.setBackground(new java.awt.Color(231, 168, 95));
+        btn_agenda2.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        btn_agenda2.setForeground(new java.awt.Color(255, 255, 255));
+        btn_agenda2.setText("AGENDA");
+        btn_agenda2.setBorder(null);
+        btn_agenda2.setRequestFocusEnabled(false);
+        btn_agenda2.setRolloverEnabled(false);
+        btn_agenda2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_agenda2ActionPerformed(evt);
+            }
+        });
+        jPanel1.add(btn_agenda2);
+        btn_agenda2.setBounds(0, 240, 220, 48);
 
         getContentPane().add(jPanel1);
         jPanel1.setBounds(0, 0, 220, 620);
@@ -369,8 +385,6 @@ public class agenda extends javax.swing.JFrame {
         jLabel11.setText("Data:");
         jPanel2.add(jLabel11);
         jLabel11.setBounds(300, 290, 160, 16);
-        jPanel2.add(jCalendar1);
-        jCalendar1.setBounds(300, 70, 420, 210);
 
         btn_pesquisa.setBackground(new java.awt.Color(240, 140, 23));
         btn_pesquisa.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
@@ -411,6 +425,8 @@ public class agenda extends javax.swing.JFrame {
         }
         jPanel2.add(txt_cpf);
         txt_cpf.setBounds(40, 130, 230, 30);
+        jPanel2.add(jCalendar1);
+        jCalendar1.setBounds(300, 70, 420, 220);
 
         getContentPane().add(jPanel2);
         jPanel2.setBounds(220, 0, 770, 620);
@@ -462,6 +478,12 @@ public class agenda extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_txt_agendaActionPerformed
 
+    private void btn_agenda2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_agenda2ActionPerformed
+        tabela agend = new tabela();
+        agend.setVisible(true);
+        dispose();
+    }//GEN-LAST:event_btn_agenda2ActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -499,6 +521,7 @@ public class agenda extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btn_agenda1;
+    private javax.swing.JButton btn_agenda2;
     private javax.swing.JButton btn_agendamento;
     private javax.swing.JButton btn_altera;
     private javax.swing.JButton btn_deleta;

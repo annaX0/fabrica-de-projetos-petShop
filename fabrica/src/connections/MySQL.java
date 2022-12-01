@@ -26,7 +26,7 @@ public class MySQL {
     private String servidor = "localhost:3306";
     private String nomeDoBanco = "petshop";
     private String usuario = "root";
-    private String senha = "fek123";
+    private String senha = "A@beat2022";
     
     //Construtor    
     public MySQL(){

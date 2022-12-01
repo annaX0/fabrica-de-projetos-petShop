@@ -92,6 +92,7 @@ public class newAgendamento extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
         btn_agenda = new javax.swing.JButton();
         btn_agendamento = new javax.swing.JButton();
+        btn_agenda1 = new javax.swing.JButton();
         jPanel2 = new javax.swing.JPanel();
         jLabel2 = new javax.swing.JLabel();
         btn_agendar = new javax.swing.JButton();
@@ -129,9 +130,9 @@ public class newAgendamento extends javax.swing.JFrame {
         jLabel1.setBounds(0, 70, 220, 30);
 
         btn_agenda.setBackground(new java.awt.Color(231, 168, 95));
-        btn_agenda.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        btn_agenda.setFont(new java.awt.Font("Segoe UI", 1, 17)); // NOI18N
         btn_agenda.setForeground(new java.awt.Color(255, 255, 255));
-        btn_agenda.setText("AGENDA");
+        btn_agenda.setText("EDITAR AGENDAMENTO");
         btn_agenda.setBorder(null);
         btn_agenda.setRequestFocusEnabled(false);
         btn_agenda.setRolloverEnabled(false);
@@ -144,9 +145,9 @@ public class newAgendamento extends javax.swing.JFrame {
         btn_agenda.setBounds(0, 190, 220, 48);
 
         btn_agendamento.setBackground(new java.awt.Color(231, 168, 95));
-        btn_agendamento.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        btn_agendamento.setFont(new java.awt.Font("Segoe UI", 1, 17)); // NOI18N
         btn_agendamento.setForeground(new java.awt.Color(255, 255, 255));
-        btn_agendamento.setText("AGENDAMENTO");
+        btn_agendamento.setText("NOVO AGENDAMENTO");
         btn_agendamento.setBorder(null);
         btn_agendamento.setBorderPainted(false);
         btn_agendamento.setFocusPainted(false);
@@ -158,6 +159,21 @@ public class newAgendamento extends javax.swing.JFrame {
         });
         jPanel1.add(btn_agendamento);
         btn_agendamento.setBounds(0, 140, 220, 48);
+
+        btn_agenda1.setBackground(new java.awt.Color(231, 168, 95));
+        btn_agenda1.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        btn_agenda1.setForeground(new java.awt.Color(255, 255, 255));
+        btn_agenda1.setText("AGENDA");
+        btn_agenda1.setBorder(null);
+        btn_agenda1.setRequestFocusEnabled(false);
+        btn_agenda1.setRolloverEnabled(false);
+        btn_agenda1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_agenda1ActionPerformed(evt);
+            }
+        });
+        jPanel1.add(btn_agenda1);
+        btn_agenda1.setBounds(0, 240, 220, 48);
 
         getContentPane().add(jPanel1);
         jPanel1.setBounds(0, 0, 220, 600);
@@ -364,6 +380,12 @@ public class newAgendamento extends javax.swing.JFrame {
 
     }//GEN-LAST:event_txt_agendamentoActionPerformed
 
+    private void btn_agenda1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_agenda1ActionPerformed
+        tabela agend = new tabela();
+        agend.setVisible(true);
+        dispose();
+    }//GEN-LAST:event_btn_agenda1ActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -402,6 +424,7 @@ public class newAgendamento extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btn_agenda;
+    private javax.swing.JButton btn_agenda1;
     private javax.swing.JButton btn_agendamento;
     private javax.swing.JButton btn_agendar;
     private javax.swing.JComboBox<String> cmb_animal;

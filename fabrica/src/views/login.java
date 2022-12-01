@@ -6,9 +6,13 @@ package views;
 
 import java.awt.Color;
 import connections.MySQL;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javax.swing.JOptionPane;
+import objects.Funcionario;
 
 /**
  *
@@ -16,6 +20,7 @@ import java.util.logging.Logger;
  */
 public class login extends javax.swing.JFrame {
     MySQL conectar = new MySQL();
+    Funcionario validaFuncionario = new Funcionario();
     /**
      * Creates new form login
      */
@@ -25,6 +30,8 @@ public class login extends javax.swing.JFrame {
     
     private Boolean FuncionarioExistente(String usuario) throws SQLException{
         this.conectar.conectaBanco();
+        
+        
         String resultado = "";
         String comando = "SELECT email from funcionario where email = '" + usuario + "';";
                 
@@ -40,6 +47,7 @@ public class login extends javax.swing.JFrame {
     private Boolean Logar(String usuario, String senha) throws SQLException{
         
         this.conectar.conectaBanco();
+        
         String usuarioBanco = "";
         String comando = "SELECT email from funcionario where email  = '" + usuario + "';";
                 
@@ -230,30 +238,54 @@ public class login extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void btn_loginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_loginActionPerformed
-        String user = txt_user.getText();
-        String senha = txt_senha.getText();
+    private void verificaUsuarios(Funcionario validaFucFuncionario){
+    this.conectar.conectaBanco();
+    
+    validaFucFuncionario.setEmail(txt_user.getText());
+    validaFucFuncionario.setSenha(txt_senha.getText());
+    
+    try{
+        String sql = ("SELECT * from funcionario where email=? and senha=?");
         
-        if(!user.equals("") && !senha.equals("")){ //Checa se os campos foram preenchidos
-            Boolean logado;
-            try {
-                logado = Logar(user, senha);
-                if(logado){ //se o login for sucesso
-                newAgendamento agendament = new newAgendamento();
-                agendament.setVisible(true);
-                dispose();
-            }else{ //se o login foi falho
-                setLabel("Credenciais erradas", Color.red);
-            }
-            } catch (SQLException ex) {
-                Logger.getLogger(login.class.getName()).log(Level.SEVERE, null, ex);
-            }
-            
-            
+        PreparedStatement ps = conectar.getConn().prepareStatement(sql);
         
-        }else{ //se os campos estiverem vazios
-            setLabel("Preencha os campos", Color.red);
+        ps.setString(1, txt_user.getText());        
+        ps.setString(2, txt_senha.getText());
+        
+        ResultSet rs = ps.executeQuery();
+
+       
+        if(rs.next() && !txt_user.getText().equals("") && !txt_senha.getText().equals("")){
+            tabela tela = new tabela();
+            tela.setVisible(true);
+            dispose();
+            JOptionPane.showMessageDialog(null, "Bem vindo");
+        }else {
+           JOptionPane.showMessageDialog(null, "Email ou senha inválido");
+
+
         }
+        
+    } catch(Exception e){
+        System.out.println(e);
+    }
+    }
+    
+    
+    private void btn_loginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_loginActionPerformed
+       
+        String email, senha;
+        
+        email = txt_user.getText();
+        senha = txt_senha.getText(); 
+
+        Funcionario validaFuncionario = new Funcionario();
+        validaFuncionario.setEmail(email);
+        validaFuncionario.setSenha(senha);
+        
+        verificaUsuarios(validaFuncionario);
+        
+        System.out.println("usuario: " + email);
     }//GEN-LAST:event_btn_loginActionPerformed
 
     private void btn_cadastrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_cadastrarActionPerformed

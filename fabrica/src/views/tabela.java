@@ -10,6 +10,7 @@ import javax.swing.JOptionPane;
 import objects.AgendamentoAnimal;
 import connections.Testes;
 import javax.swing.table.DefaultTableModel;
+import objects.Agenda;
 
 /**
  *
@@ -38,13 +39,81 @@ public class tabela extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jPanel1 = new javax.swing.JPanel();
+        jLabel1 = new javax.swing.JLabel();
+        btn_agenda = new javax.swing.JButton();
+        btn_agendamento = new javax.swing.JButton();
+        btn_agenda1 = new javax.swing.JButton();
+        jPanel2 = new javax.swing.JPanel();
         jScrollPane1 = new javax.swing.JScrollPane();
         jTable1 = new javax.swing.JTable();
-        btn_Carregar = new javax.swing.JButton();
-        jTextField1 = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
+        jPanel1.setBackground(new java.awt.Color(240, 140, 23));
+        jPanel1.setLayout(null);
+
+        jLabel1.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel1.setText("BEM VINDO");
+        jPanel1.add(jLabel1);
+        jLabel1.setBounds(0, 70, 220, 30);
+
+        btn_agenda.setBackground(new java.awt.Color(231, 168, 95));
+        btn_agenda.setFont(new java.awt.Font("Segoe UI", 1, 17)); // NOI18N
+        btn_agenda.setForeground(new java.awt.Color(255, 255, 255));
+        btn_agenda.setText("EDITAR AGENDAMENTO");
+        btn_agenda.setBorder(null);
+        btn_agenda.setRequestFocusEnabled(false);
+        btn_agenda.setRolloverEnabled(false);
+        btn_agenda.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_agendaActionPerformed(evt);
+            }
+        });
+        jPanel1.add(btn_agenda);
+        btn_agenda.setBounds(0, 190, 220, 48);
+
+        btn_agendamento.setBackground(new java.awt.Color(231, 168, 95));
+        btn_agendamento.setFont(new java.awt.Font("Segoe UI", 1, 17)); // NOI18N
+        btn_agendamento.setForeground(new java.awt.Color(255, 255, 255));
+        btn_agendamento.setText("NOVO AGENDAMENTO");
+        btn_agendamento.setBorder(null);
+        btn_agendamento.setBorderPainted(false);
+        btn_agendamento.setFocusPainted(false);
+        btn_agendamento.setFocusable(false);
+        btn_agendamento.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_agendamentoActionPerformed(evt);
+            }
+        });
+        jPanel1.add(btn_agendamento);
+        btn_agendamento.setBounds(0, 140, 220, 48);
+
+        btn_agenda1.setBackground(new java.awt.Color(231, 168, 95));
+        btn_agenda1.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        btn_agenda1.setForeground(new java.awt.Color(255, 255, 255));
+        btn_agenda1.setText("AGENDA");
+        btn_agenda1.setBorder(null);
+        btn_agenda1.setRequestFocusEnabled(false);
+        btn_agenda1.setRolloverEnabled(false);
+        btn_agenda1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_agenda1ActionPerformed(evt);
+            }
+        });
+        jPanel1.add(btn_agenda1);
+        btn_agenda1.setBounds(0, 240, 220, 48);
+
+        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 220, 600));
+
+        jPanel2.setBackground(new java.awt.Color(0, 63, 89));
+        jPanel2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jTable1.setAutoCreateRowSorter(true);
+        jTable1.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
         jTable1.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null},
@@ -53,52 +122,34 @@ public class tabela extends javax.swing.JFrame {
                 {null, null, null, null}
             },
             new String [] {
-                "Data", "Hora", "Funcionario", "Serviço"
+                "Nome do Dono", "Nome do animal", "Serviço", "Horário", "Data"
             }
         ));
+        jTable1.setSelectionBackground(new java.awt.Color(153, 153, 153));
         jScrollPane1.setViewportView(jTable1);
 
-        btn_Carregar.setText("Carregar");
-        btn_Carregar.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btn_CarregarActionPerformed(evt);
-            }
-        });
+        jPanel2.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 20, 550, 550));
 
-        jTextField1.setText("mês");
-
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap(14, Short.MAX_VALUE)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 647, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(btn_Carregar)
-                    .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(80, 80, 80))
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(16, 16, 16)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(btn_Carregar)
-                        .addGap(18, 18, 18)
-                        .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(107, Short.MAX_VALUE))
-        );
+        getContentPane().add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 0, 600, 600));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void btn_CarregarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_CarregarActionPerformed
-        listarValores();
-    }//GEN-LAST:event_btn_CarregarActionPerformed
+    private void btn_agendaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_agendaActionPerformed
+        agenda agend = new agenda();
+        agend.setVisible(true);
+        dispose();
+    }//GEN-LAST:event_btn_agendaActionPerformed
+
+    private void btn_agendamentoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_agendamentoActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btn_agendamentoActionPerformed
+
+    private void btn_agenda1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_agenda1ActionPerformed
+        tabela agend = new tabela();
+        agend.setVisible(true);
+        dispose();
+    }//GEN-LAST:event_btn_agenda1ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -136,25 +187,31 @@ public class tabela extends javax.swing.JFrame {
     }
    
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton btn_Carregar;
+    private javax.swing.JButton btn_agenda;
+    private javax.swing.JButton btn_agenda1;
+    private javax.swing.JButton btn_agendamento;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JPanel jPanel1;
+    private javax.swing.JPanel jPanel2;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTable jTable1;
-    private javax.swing.JTextField jTextField1;
     // End of variables declaration//GEN-END:variables
 
     private void listarValores(){
         try {
-            Testes teste = new Testes();
+            Agenda agenda = new Agenda();
             
             DefaultTableModel model = (DefaultTableModel) jTable1.getModel();
             model.setNumRows(0);
-            ArrayList<AgendamentoAnimal> lista = teste.PesquisarAgendamento();
+            ArrayList<AgendamentoAnimal> lista = agenda.PesquisarAgendamento();
             
             for(int num = 0; num < lista.size(); num ++){
                 model.addRow(new Object[]{
-                    lista.get(num).getIdDono(),
                     lista.get(num).getNomeDono(),
-                    lista.get(num).getNomeAnimal()
+                    lista.get(num).getNomeAnimal(),
+                    lista.get(num).getServico(),                    
+                    lista.get(num).getHora(),
+                    lista.get(num).getAgenda()
                 });
             }
         } catch (Exception erro) {
