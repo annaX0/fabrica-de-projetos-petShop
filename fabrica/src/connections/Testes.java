@@ -4,34 +4,47 @@
  */
 package connections;
 import connections.MySQL;
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
+import javax.swing.JOptionPane;
+import objects.AgendamentoAnimal;
 /**
  *
  * @author fekwa
  */
 public class Testes {
+    
     MySQL conectar = new MySQL();
-    String usuario = "ADMIN";
-    String resultado = "";
-    public void buscaCliente() throws SQLException{
-        
-        this.conectar.conectaBanco();
-        
-        String comando = "Select nome from funcionario where nome = '12';";
-        
-        this.conectar.executarSQL(comando);
-        while (this.conectar.getResultSet().next()) {
-             resultado = this.conectar.getResultSet().getString(1);
+    
+    Connection conn;
+    PreparedStatement pstm;
+    ResultSet rs;
+    ArrayList<AgendamentoAnimal> lista = new ArrayList<>();
+    
+   public ArrayList<AgendamentoAnimal> PesquisarAgendamento(){
+       String sql = "select * from agendamento";
+       this.conectar.conectaBanco();
+       conn = conectar.getConn();
+       try {
+           pstm = conn.prepareStatement(sql);
+           rs = pstm.executeQuery();
            
-        }
-        if(resultado.equals("")){
-            resultado = "VAZIO";
-        }else{
-            System.out.println("STRING POSSUI ALGO");
-        }
-        System.out.println(resultado);
-        
-    } 
+           while(rs.next()){
+               AgendamentoAnimal agend = new AgendamentoAnimal();
+               agend.setIdDono(rs.getInt("idFuncionario"));
+               agend.setNomeDono(rs.getString("idDono"));
+               agend.setNomeAnimal(rs.getString("idPet"));
+               
+               lista.add(agend);
+           }
+       } catch(SQLException erro) {
+           JOptionPane.showMessageDialog(null, "Algo errado aconteceu" + erro);
+       }
+       return lista;
+   }
 }
 
 

@@ -21,6 +21,7 @@ public class AgendamentoAnimal {
     String servico;
     String agenda;
     String cpf;
+    int idDono;
 
     
 
@@ -28,7 +29,8 @@ public class AgendamentoAnimal {
         //throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
     }
 
-    public AgendamentoAnimal(String Animal, String nomeAnimal, String nomeDono, String telefone, String kilos, String hora, String servico, String agenda, String cpf) {
+    public AgendamentoAnimal(int idDono,String Animal, String nomeAnimal, String nomeDono, String telefone, String kilos, String hora, String servico, String agenda, String cpf) {
+        this.idDono = idDono;
         this.Animal = Animal;
         this.nomeAnimal = nomeAnimal;
         this.nomeDono = nomeDono;
@@ -38,6 +40,14 @@ public class AgendamentoAnimal {
         this.servico = servico;
         this.agenda = agenda;
         this.cpf = cpf;
+    }
+
+    public int getIdDono() {
+        return idDono;
+    }
+
+    public void setIdDono(int idDono) {
+        this.idDono = idDono;
     }
 
     public String getAnimal() {
