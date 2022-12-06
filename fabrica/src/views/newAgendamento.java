@@ -69,7 +69,7 @@ public class newAgendamento extends javax.swing.JFrame {
     + "'" +novoAgendamento.getCpf()+ "'" 
     + ");");
      } catch (Exception e){
-            System.err.println("Erro ao cadastrar Usuario" + e.getMessage());
+            System.err.println("Erro ao cadastrar Agendamento" + e.getMessage());
             JOptionPane.showMessageDialog(null, "Erro ao cadastrar agendamento");
         } finally{
             this.conectar.fechaBanco();
@@ -93,6 +93,7 @@ public class newAgendamento extends javax.swing.JFrame {
         btn_agenda = new javax.swing.JButton();
         btn_agendamento = new javax.swing.JButton();
         btn_agenda1 = new javax.swing.JButton();
+        btn_agenda2 = new javax.swing.JButton();
         jPanel2 = new javax.swing.JPanel();
         jLabel2 = new javax.swing.JLabel();
         btn_agendar = new javax.swing.JButton();
@@ -125,7 +126,7 @@ public class newAgendamento extends javax.swing.JFrame {
         jLabel1.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(255, 255, 255));
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel1.setText("BEM VINDO");
+        jLabel1.setText("NOVO");
         jPanel1.add(jLabel1);
         jLabel1.setBounds(0, 70, 220, 30);
 
@@ -174,6 +175,21 @@ public class newAgendamento extends javax.swing.JFrame {
         });
         jPanel1.add(btn_agenda1);
         btn_agenda1.setBounds(0, 240, 220, 48);
+
+        btn_agenda2.setBackground(new java.awt.Color(255, 102, 51));
+        btn_agenda2.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        btn_agenda2.setForeground(new java.awt.Color(255, 255, 255));
+        btn_agenda2.setText("SAIR");
+        btn_agenda2.setBorder(null);
+        btn_agenda2.setRequestFocusEnabled(false);
+        btn_agenda2.setRolloverEnabled(false);
+        btn_agenda2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_agenda2ActionPerformed(evt);
+            }
+        });
+        jPanel1.add(btn_agenda2);
+        btn_agenda2.setBounds(0, 490, 220, 30);
 
         getContentPane().add(jPanel1);
         jPanel1.setBounds(0, 0, 220, 600);
@@ -386,6 +402,12 @@ public class newAgendamento extends javax.swing.JFrame {
         dispose();
     }//GEN-LAST:event_btn_agenda1ActionPerformed
 
+    private void btn_agenda2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_agenda2ActionPerformed
+       login agend = new login();
+        agend.setVisible(true);
+        dispose();
+    }//GEN-LAST:event_btn_agenda2ActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -425,6 +447,7 @@ public class newAgendamento extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btn_agenda;
     private javax.swing.JButton btn_agenda1;
+    private javax.swing.JButton btn_agenda2;
     private javax.swing.JButton btn_agendamento;
     private javax.swing.JButton btn_agendar;
     private javax.swing.JComboBox<String> cmb_animal;

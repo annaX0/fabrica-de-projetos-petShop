@@ -1,1 +1,0 @@
-memberSearchIndex = [{"p":"fabrica","c":"Fabrica","l":"Fabrica()","u":"%3Cinit%3E()"},{"p":"fabrica","c":"login","l":"login()","u":"%3Cinit%3E()"},{"p":"fabrica","c":"Fabrica","l":"main(String[])","u":"main(java.lang.String[])"},{"p":"fabrica","c":"login","l":"main(String[])","u":"main(java.lang.String[])"}];updateSearchResults();

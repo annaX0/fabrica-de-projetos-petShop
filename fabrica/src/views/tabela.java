@@ -44,6 +44,7 @@ public class tabela extends javax.swing.JFrame {
         btn_agenda = new javax.swing.JButton();
         btn_agendamento = new javax.swing.JButton();
         btn_agenda1 = new javax.swing.JButton();
+        btn_agenda2 = new javax.swing.JButton();
         jPanel2 = new javax.swing.JPanel();
         jScrollPane1 = new javax.swing.JScrollPane();
         jTable1 = new javax.swing.JTable();
@@ -57,7 +58,7 @@ public class tabela extends javax.swing.JFrame {
         jLabel1.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(255, 255, 255));
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel1.setText("BEM VINDO");
+        jLabel1.setText("Agenda");
         jPanel1.add(jLabel1);
         jLabel1.setBounds(0, 70, 220, 30);
 
@@ -107,6 +108,21 @@ public class tabela extends javax.swing.JFrame {
         jPanel1.add(btn_agenda1);
         btn_agenda1.setBounds(0, 240, 220, 48);
 
+        btn_agenda2.setBackground(new java.awt.Color(255, 102, 51));
+        btn_agenda2.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        btn_agenda2.setForeground(new java.awt.Color(255, 255, 255));
+        btn_agenda2.setText("SAIR");
+        btn_agenda2.setBorder(null);
+        btn_agenda2.setRequestFocusEnabled(false);
+        btn_agenda2.setRolloverEnabled(false);
+        btn_agenda2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_agenda2ActionPerformed(evt);
+            }
+        });
+        jPanel1.add(btn_agenda2);
+        btn_agenda2.setBounds(0, 490, 220, 30);
+
         getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 220, 600));
 
         jPanel2.setBackground(new java.awt.Color(0, 63, 89));
@@ -142,7 +158,9 @@ public class tabela extends javax.swing.JFrame {
     }//GEN-LAST:event_btn_agendaActionPerformed
 
     private void btn_agendamentoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_agendamentoActionPerformed
-        // TODO add your handling code here:
+         newAgendamento agend = new newAgendamento();
+        agend.setVisible(true);
+        dispose();
     }//GEN-LAST:event_btn_agendamentoActionPerformed
 
     private void btn_agenda1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_agenda1ActionPerformed
@@ -150,6 +168,12 @@ public class tabela extends javax.swing.JFrame {
         agend.setVisible(true);
         dispose();
     }//GEN-LAST:event_btn_agenda1ActionPerformed
+
+    private void btn_agenda2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_agenda2ActionPerformed
+        login agend = new login();
+        agend.setVisible(true);
+        dispose();
+    }//GEN-LAST:event_btn_agenda2ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -189,6 +213,7 @@ public class tabela extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btn_agenda;
     private javax.swing.JButton btn_agenda1;
+    private javax.swing.JButton btn_agenda2;
     private javax.swing.JButton btn_agendamento;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JPanel jPanel1;

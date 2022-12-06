@@ -143,7 +143,7 @@ public class newAccount extends javax.swing.JFrame {
             }
         });
         jPanel2.add(btn_criar);
-        btn_criar.setBounds(190, 390, 120, 30);
+        btn_criar.setBounds(160, 390, 190, 30);
 
         jLabel3.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         jLabel3.setForeground(new java.awt.Color(51, 51, 51));

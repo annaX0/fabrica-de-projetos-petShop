@@ -191,6 +191,7 @@ public class agenda extends javax.swing.JFrame {
         btn_agendamento = new javax.swing.JButton();
         btn_agenda1 = new javax.swing.JButton();
         btn_agenda2 = new javax.swing.JButton();
+        btn_agenda3 = new javax.swing.JButton();
         jPanel2 = new javax.swing.JPanel();
         btn_altera = new javax.swing.JButton();
         btn_deleta = new javax.swing.JButton();
@@ -222,10 +223,10 @@ public class agenda extends javax.swing.JFrame {
         jPanel1.setBackground(new java.awt.Color(240, 140, 23));
         jPanel1.setLayout(null);
 
-        jLabel1.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
+        jLabel1.setFont(new java.awt.Font("Segoe UI", 1, 22)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(255, 255, 255));
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel1.setText("Agenda");
+        jLabel1.setText("EDITAR");
         jPanel1.add(jLabel1);
         jLabel1.setBounds(0, 70, 220, 30);
 
@@ -274,6 +275,21 @@ public class agenda extends javax.swing.JFrame {
         });
         jPanel1.add(btn_agenda2);
         btn_agenda2.setBounds(0, 240, 220, 48);
+
+        btn_agenda3.setBackground(new java.awt.Color(255, 102, 51));
+        btn_agenda3.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        btn_agenda3.setForeground(new java.awt.Color(255, 255, 255));
+        btn_agenda3.setText("SAIR");
+        btn_agenda3.setBorder(null);
+        btn_agenda3.setRequestFocusEnabled(false);
+        btn_agenda3.setRolloverEnabled(false);
+        btn_agenda3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_agenda3ActionPerformed(evt);
+            }
+        });
+        jPanel1.add(btn_agenda3);
+        btn_agenda3.setBounds(0, 490, 220, 30);
 
         getContentPane().add(jPanel1);
         jPanel1.setBounds(0, 0, 220, 620);
@@ -484,6 +500,12 @@ public class agenda extends javax.swing.JFrame {
         dispose();
     }//GEN-LAST:event_btn_agenda2ActionPerformed
 
+    private void btn_agenda3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_agenda3ActionPerformed
+        login agend = new login();
+        agend.setVisible(true);
+        dispose();
+    }//GEN-LAST:event_btn_agenda3ActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -522,6 +544,7 @@ public class agenda extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btn_agenda1;
     private javax.swing.JButton btn_agenda2;
+    private javax.swing.JButton btn_agenda3;
     private javax.swing.JButton btn_agendamento;
     private javax.swing.JButton btn_altera;
     private javax.swing.JButton btn_deleta;
